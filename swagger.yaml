@@ -1,0 +1,157 @@
+openapi: 3.0.3
+
+info:
+    title: API Interface ARGOS envio de mensajes - OpenAPI 3.0
+    description: Documentación Swagger para la especificación de la API Interface con ARGOS para envio de mensajes varios.
+    version: 1.0.11
+
+servers:
+    - url: "http://localhost:4000/api-docs"
+      description: "Entorno de desarrollo de apis"
+    - url: "http://produccion:4000/api-docs"
+      description: "Entorno de producción de apis"
+
+tags:
+    - name: Mensaje Blanco
+      description: Procesamiento y envio de Mensajes Blanco al Argos.
+    - name: Imagenes Satelitales
+      description: Envio de mensajes de imagenes satelitales al Argos.
+
+paths:
+    /api/v1/mensajeBlanco/pollux:
+        post:
+            tags:
+                - Mensaje Blanco
+            summary: Envia un mensaje blanco del pollux al Argos.
+            description: Toma un mensaje blanco que le envia el Pollux por medio del Broker de mensajes, donde este ultimo lo envia a este endpoint, el cual lo procesa y reenvia con el formato adecuado al Argos.
+            requestBody:
+                description: Procesa el mensaje blanco enviado por Pollux y lo envia al Argos.
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/MensajePollux"
+            responses:
+                "200":
+                    description: Operacion exitosa
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/RespuestaOK"
+                "400":
+                    description: Entrada Invalida
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/RespuestaError"
+
+    /api/v1/mensajeBlanco/web:
+        post:
+            tags:
+                - Mensaje Blanco
+            summary: Envia un mensaje blanco del C4Web al Argos.
+            description: Toma un mensaje blanco que le envia el C4Web por medio del Broker de mensajes, donde este ultimo lo envia a este endpoint, el cual lo procesa y reenvia con el formato adecuado al Argos.
+            requestBody:
+                description: Procesa el mensaje blanco enviado por C4Web y lo envia al Argos.
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/MensajeWeb"
+            responses:
+                "200":
+                    description: Operacion exitosa
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/RespuestaOK"
+                "400":
+                    description: Entrada Invalida
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/RespuestaError"
+
+    /api/v1/mensajeImgSat:
+        post:
+            tags:
+                - Imagenes Satelitales
+            summary: Envia los mensajes de Imagenes Satelitales al Argos.
+            description: Toma un mensaje de imagenes satelitales que le envia el C4Web por medio del Broker de mensajes, donde este ultimo lo envia a este endpoint, el cual lo procesa y reenvia con el formato adecuado al Argos.
+            requestBody:
+                description: Procesa el mensaje de imagenes satelitales enviado por C4Web y lo envia al Argos.
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/MensajeImgSatelital"
+            responses:
+                "200":
+                    description: Operacion exitosa
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/RespuestaOK"
+                "400":
+                    description: Entrada Invalida
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/RespuestaError"
+
+components:
+    schemas:
+        MensajePollux:
+            type: object
+            properties:
+                origen:
+                    type: string
+                    description: unidad origen del mensaje
+                destino:
+                    type: string
+                    description: unidad destino del mensaje
+                tipo:
+                    type: integer
+                    description: entero que representa el tipo de mensaje
+                dato:
+                    type: string
+                    description: es un JSON con mensaje a almacenar
+            required:
+                - origen
+                - tipo
+                - dato
+            example:
+                origen: DELA
+                destino: COAA
+                tipo: 1
+                dato: '{"tipo":17,"origen":"DELA","destino":null,"dato":"{\"IdTipoMensaje\":17,\"From\":{\"Key\":\"DELA\",\"Value\":\"OPS\"},\"To\":null,\"DatoJson\":\"{\\\"$type\\\":\\\"PolluxLib.DTO.EDTOAIS, PolluxLib\\\",\\\"Lat\\\":-43.16342640647877,\\\"Lon\\\":-63.977661892638345,\\\"Rumbo\\\":120.0,\\\"Vel\\\":22.0,\\\"DimProa\\\":0.0,\\\"DimPopa\\\":0.0,\\\"DimBabor\\\":0.0,\\\"DimEstribor\\\":0.0,\\\"Calado\\\":0.0,\\\"Eslora\\\":0.0,\\\"Manga\\\":0.0,\\\"TrueHeading\\\":0.0,\\\"Acimut\\\":276.40851889906276,\\\"Distancia\\\":35.003726573037909,\\\"NroTrack\\\":11002,\\\"MMSI\\\":701000000,\\\"MMSI_Nuevo\\\":701000000,\\\"ImoNro\\\":0,\\\"IMO_Nuevo\\\":0,\\\"NroTipoBuque\\\":0,\\\"PsnAccuracy\\\":0,\\\"TimeStamp\\\":0,\\\"NroEstNav\\\":0,\\\"AisVer\\\":0,\\\"FixDevice\\\":0,\\\"EtaMes\\\":0,\\\"EtaDia\\\":0,\\\"EtaHora\\\":0,\\\"EtaMin\\\":0,\\\"Estado\\\":1,\\\"EstadoNav\\\":\\\"\\\",\\\"CallSign\\\":\\\"\\\",\\\"Nombre\\\":\\\"BUQUE1\\\",\\\"TipoBuque\\\":\\\"Buque Pesquero\\\",\\\"Bandera\\\":\\\"Argentina\\\",\\\"Destino\\\":\\\"\\\",\\\"Promotor\\\":\\\"DELA\\\",\\\"Clasificacion\\\":\\\"POTERO\\\",\\\"Actividad\\\":\\\"PESCANDO\\\",\\\"Layer\\\":\\\"Form. Blanco\\\",\\\"TimeD\\\":{\\\"$type\\\":\\\"PolluxLib._SYSTEMTIME, PolluxLib\\\",\\\"_Year\\\":2022,\\\"_Mes\\\":9,\\\"_DiaOfWeek\\\":5,\\\"_Dia\\\":23,\\\"_Hora\\\":11,\\\"_Minuto\\\":51,\\\"_Segundo\\\":27,\\\"_MiliSegundos\\\":930},\\\"TimeE\\\":{\\\"$type\\\":\\\"PolluxLib._SYSTEMTIME, PolluxLib\\\",\\\"_Year\\\":2022,\\\"_Mes\\\":9,\\\"_DiaOfWeek\\\":5,\\\"_Dia\\\":23,\\\"_Hora\\\":11,\\\"_Minuto\\\":51,\\\"_Segundo\\\":27,\\\"_MiliSegundos\\\":930},\\\"UltimaHoraRx\\\":\\\"2022-09-23T11:52:15.3529117-03:00\\\",\\\"UltimaHoraTx\\\":\\\"2022-09-23T12:13:27.2664794-03:00\\\",\\\"T\\\":7,\\\"I\\\":5,\\\"Info\\\":4,\\\"MT\\\":6,\\\"EL\\\":2,\\\"Autorizado\\\":false,\\\"TextoAsoc\\\":\\\"bruno\\\",\\\"RolDeConsolaCreadora\\\":0,\\\"FusionadoRadar\\\":-1,\\\"CalcularCinematica\\\":true,\\\"IdEntidad\\\":\\\"8cc87bc2-3b51-11ed-a261-0242ac120002\\\"}\",\"FechaYHora\":\"2022-09-23T12:13:27.2664794-03:00\"}"}'
+
+        MensajeImgSatelital:
+            type: object
+            example: '{"Ver":"1.0","Sis":"C4","Fte":"SIAG","FteDescripcion":"Servicio de Análisis Operativo, Armas, y Guerra Electrónica","Tv":"Vehículo desconocido","Ts":"Imagen Satelite","IDimagen":"281872d5-f0a7-4d41-94b0-74eafed73497","FH":"2/1/2022 00:00:00","ListaContactos":[{"Id":"54e60338-d86d-4fe2-8c6f-f95114543b02","Lat":"-46,60200376","Long":"-60,13995064","Dim":"232,6870875"},{"Id":"26973b15-88a8-443e-a59a-a12a6d561e0c","Lat":"-46,62115624","Long":"-59,98899527","Dim":"180,9788458"},{"Id":"79cba2ed-cc1b-4289-a658-914474357ade","Lat":"-46,73304694","Long":"-60,65857631","Dim":"129,2706041"},{"Id":"f847c025-5a2a-4e11-9583-8cbf6c95845d","Lat":"-46,7528034","Long":"-60,67143082","Dim":"103,4164833"},{"Id":"55debfc1-189b-4d37-b3f8-8696806f797d","Lat":"-46,77331262","Long":"-60,69340595","Dim":"206,8329666"},{"Id":"e2b853db-9ea4-43e6-8229-061a584ecbd8","Lat":"-46,78710321","Long":"-60,71026199","Dim":"103,4164833"},{"Id":"b4a5b3d3-f3b9-4b96-98d1-eaccb2c8c129","Lat":"-46,81566522","Long":"-60,72480926","Dim":"155,124725"},{"Id":"522b5093-18bf-4821-bc4b-e39c78ec096d","Lat":"-46,82590604","Long":"-60,75268252","Dim":"129,2706041"},{"Id":"a73dc2d3-37fa-43b8-8a78-ccd9ab89a43b","Lat":"-46,82805706","Long":"-60,72309966","Dim":"129,2706041"},{"Id":"22fdade5-7540-4f39-a972-bf364e436b5c","Lat":"-46,8289187","Long":"-60,7435732","Dim":"180,9788458"},{"Id":"a8a2903c-84fa-487c-af5b-afd6132bb504","Lat":"-46,84136056","Long":"-60,76763579","Dim":"155,124725"},{"Id":"d8af2044-a103-4b53-8d1a-9ae23d095048","Lat":"-46,74742516","Long":"-60,51866171","Dim":"77,56236249"},{"Id":"aa1242a7-3ee3-4bde-8c4b-8972ab9dfbf3","Lat":"-46,74795427","Long":"-60,46481554","Dim":"155,124725"},{"Id":"82a23a43-35a1-4322-ac09-fd40b9390e02","Lat":"-46,85025552","Long":"-60,7445446","Dim":"155,124725"},{"Id":"7a3d2fc4-741e-43f1-b7a7-17df37d40902","Lat":"-46,85503588","Long":"-60,76740804","Dim":"155,124725"},{"Id":"c83a9549-edc6-4184-a2f7-4218f062c1bd","Lat":"-46,85705632","Long":"-60,77749978","Dim":"155,124725"},{"Id":"d0be5cf4-b62b-426c-8e64-97111541c3c2","Lat":"-46,86305035","Long":"-60,7633442","Dim":"232,6870875"},{"Id":"e8ee4dcb-0a78-4366-ad26-161576aaf67a","Lat":"-46,87862093","Long":"-60,76676878","Dim":"129,2706041"},{"Id":"8877c781-9e4e-4e6b-9479-f2e856ba63ef","Lat":"-46,88007855","Long":"-60,77722748","Dim":"103,4164833"},{"Id":"0b45a192-a44f-4754-96ae-0e9d657d6abc","Lat":"-46,88657625","Long":"-60,77135935","Dim":"155,124725"},{"Id":"c7178c8f-c843-4980-ba9a-c425b2235d36","Lat":"-46,9014382","Long":"-60,7793996","Dim":"129,2706041"},{"Id":"dfeab535-8d31-4267-a83a-04a9915a1bc3","Lat":"-46,87032646","Long":"-60,78577275","Dim":"129,2706041"},{"Id":"ac5d69c0-c510-4a5d-a14d-d145894283a5","Lat":"-46,87202973","Long":"-60,79723813","Dim":"206,8329666"},{"Id":"99f66a01-77e7-4d9a-93eb-1a39acd20b4a","Lat":"-46,87168678","Long":"-60,7853775","Dim":"25,85412083"},{"Id":"7777edf5-53f2-4796-a5fc-f147afad112f","Lat":"-46,88054038","Long":"-60,80706962","Dim":"129,2706041"},{"Id":"2ee8eb05-760e-4e2d-981f-3c5ad09da45b","Lat":"-46,88692548","Long":"-60,79527064","Dim":"180,9788458"},{"Id":"e9027732-fe49-4ceb-8fbd-48060438f173","Lat":"-46,89741413","Long":"-60,78940954","Dim":"155,124725"},{"Id":"6d194250-69e5-41be-aafb-8a13a8afdf4f","Lat":"-46,90135048","Long":"-60,82828595","Dim":"258,5412083"},{"Id":"7b7ba0b1-8eee-4e3b-941e-0abad580d10e","Lat":"-46,9014382","Long":"-60,7793996","Dim":"129,2706041"},{"Id":"93c6f4db-111b-4ba6-b57e-bfa6316ed7f9","Lat":"-46,9106933","Long":"-60,8100835","Dim":"232,6870875"},{"Id":"1c4eb703-6f90-40bd-80cf-40b1e3961476","Lat":"-46,91816072","Long":"-60,82505975","Dim":"206,8329666"},{"Id":"8ee370fc-e1d0-437a-a6c7-d23258402322","Lat":"-46,92073013","Long":"-60,79846804","Dim":"129,2706041"},{"Id":"15ab0b70-16f5-4423-a0e1-740baaa43f3b","Lat":"-46,92234766","Long":"-60,79959033","Dim":"25,85412083"},{"Id":"6ec50bb2-6d95-45ff-89aa-1371b37247cf","Lat":"-46,93573643","Long":"-60,81415748","Dim":"155,124725"},{"Id":"455b1f0d-53d1-4b6a-a787-1cc8fe00c994","Lat":"-46,94669787","Long":"-60,83307685","Dim":"232,6870875"},{"Id":"54a9f5f3-a809-4e8b-8c59-1ccc0f4d154f","Lat":"-46,94941771","Long":"-60,82022576","Dim":"25,85412083"},{"Id":"5296eb84-5e46-4d79-bbda-7bb68d8d1d17","Lat":"-46,95055032","Long":"-60,81983998","Dim":"180,9788458"},{"Id":"a90e8410-a807-4fea-bace-d89d5ee14c67","Lat":"-46,96213903","Long":"-60,82378705","Dim":"155,124725"},{"Id":"b32ca14d-a34b-4a05-954f-a7f43f5c0fc8","Lat":"-47,02476135","Long":"-61,04716422","Dim":"258,5412083"},{"Id":"80564f20-a6a5-43df-8ca6-c94e39894aa8","Lat":"-47,11372499","Long":"-60,82238357","Dim":"155,124725"},{"Id":"f05ecfbe-4206-4d32-a408-5170542eef68","Lat":"-47,14462226","Long":"-60,82265609","Dim":"129,2706041"},{"Id":"d525591e-28da-46f4-aad1-a3a19b19ef72","Lat":"-47,19265349","Long":"-60,82478724","Dim":"206,8329666"},{"Id":"66d855a8-d11f-46db-b444-4255b51346df","Lat":"-47,11151039","Long":"-60,71461082","Dim":"180,9788458"},{"Id":"4476622a-8106-4b69-8694-0cb5936f39e2","Lat":"-47,23435842","Long":"-60,81795661","Dim":"180,9788458"},{"Id":"72f7d2d8-25ef-41b6-bc07-0489657cb685","Lat":"-47,24491531","Long":"-60,80966487","Dim":"232,6870875"},{"Id":"733e58ef-3753-4e53-a7b3-5ed672cd1818","Lat":"-47,26019301","Long":"-60,79792757","Dim":"129,2706041"},{"Id":"35a09556-862b-41b7-9813-5f0c9efc59a5","Lat":"-47,27602716","Long":"-60,79145888","Dim":"232,6870875"},{"Id":"ae58b069-f24e-44ea-8d68-95db7d645dcf","Lat":"-47,28892943","Long":"-60,80442817","Dim":"206,8329666"},{"Id":"c0fcc8c4-2014-4f8d-9cbb-fdba251e1187","Lat":"-47,2968047","Long":"-60,78717355","Dim":"155,124725"},{"Id":"59f3a59e-d998-40ac-b339-a5c949e6fde0","Lat":"-47,31698812","Long":"-60,76990886","Dim":"103,4164833"},{"Id":"4f3bb164-3b40-4105-ac7a-4e7234436283","Lat":"-47,31754224","Long":"-60,7808335","Dim":"77,56236249"},{"Id":"4461a32e-c5d4-4716-8aaa-e9576a12b3f0","Lat":"-47,55358113","Long":"-60,98927668","Dim":"206,8329666"},{"Id":"f1daced8-cb97-4584-b790-564d65429b86","Lat":"-47,55517403","Long":"-60,97615642","Dim":"258,5412083"},{"Id":"389896da-7d97-41b6-b66e-84d692b1a937","Lat":"-48,04727613","Long":"-61,01158623","Dim":"155,124725"},{"Id":"ecf66a08-98c4-4fee-94de-23f30528de6e","Lat":"-48,04966799","Long":"-61,01808609","Dim":"103,4164833"},{"Id":"0ffcb8e3-1694-4e1d-a298-ee44275b3463","Lat":"-48,5890169","Long":"-59,2178376","Dim":"258,5412083"},{"Id":"cd3065b2-ebc3-4f1e-9ee2-769ac6963a01","Lat":"-48,96626097","Long":"-60,62908432","Dim":"129,2706041"},{"Id":"45fb5e4d-95de-44a7-8c39-2dbc2f50ea80","Lat":"-48,96752788","Long":"-60,60217431","Dim":"129,2706041"},{"Id":"8adb28af-c277-44b8-bc21-258c7c07dc7c","Lat":"-49,07750584","Long":"-60,52677581","Dim":"103,4164833"},{"Id":"cebbb3d3-514b-428c-9117-7c6e8091cf39","Lat":"-49,09473764","Long":"-60,40336708","Dim":"129,2706041"}]}'
+
+        RespuestaOK:
+            type: object
+            properties:
+                respuesta:
+                    type: string
+                    description: string que indica que la operacion fue un Exito
+                mensaje:
+                    type: string
+                    description: string que indica el mensaje de respuesta
+            example:
+                respuesta: OK
+                mensaje: datos enviados OK.
+
+        RespuestaError:
+            type: object
+            properties:
+                respuesta:
+                    type: string
+                    description: string que indica que hubo en Error en la operacion
+                mensaje:
+                    type: string
+                    description: string que indica el tipo de error
+            example:
+                respuesta: Error
+                mensaje: Error al almacenar los datos.

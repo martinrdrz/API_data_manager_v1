@@ -1,0 +1,1515 @@
+[
+    {
+        "id_destino": "ADBA",
+        "descripcion": "APOSTADERO NAVAL BUENOS AIRES"
+    },
+    {
+        "id_destino": "ADIE",
+        "descripcion": "APOSTADERO NAVAL TENIENTE CORONEL DE MARINA DN. LUIS PIEDRA BUENA"
+    },
+    {
+        "id_destino": "ADPD",
+        "descripcion": "APOSTADERO NAVAL PUERTO DESEADO"
+    },
+    {
+        "id_destino": "ADPM",
+        "descripcion": "APOSTADERO NAVAL PUERTO MADRYN"
+    },
+    {
+        "id_destino": "ADRG",
+        "descripcion": "APOSTADERO NAVAL RIO GALLEGOS"
+    },
+    {
+        "id_destino": "ADRS",
+        "descripcion": "APOSTADERO NAVAL RÍO SANTIAGO"
+    },
+    {
+        "id_destino": "ADSF",
+        "descripcion": "APOSTADERO NAVAL SAN FERNANDO"
+    },
+    {
+        "id_destino": "AEIV",
+        "descripcion": "AERODROMO NAVAL AUX. ISLA VERDE"
+    },
+    {
+        "id_destino": "AEPR",
+        "descripcion": "AERODROMO NAVAL AUX. PUERTO ROSALES"
+    },
+    {
+        "id_destino": "AGAL",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS  A LA EMBAJADA ARGENTINA EN LA REPUBLICA FEDERAL DE ALEMANIA"
+    },
+    {
+        "id_destino": "AGAU",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA  EN AUSTRALIA"
+    },
+    {
+        "id_destino": "AGBE",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA EN EL REINO DE BELGICA"
+    },
+    {
+        "id_destino": "AGBO",
+        "descripcion": "AGREGADURIA NAVAL A LA EMBAJADA ARGENTINA EN EL ESTADO PLURINACIONAL DE BOLIVIA"
+    },
+    {
+        "id_destino": "AGBR",
+        "descripcion": "AGREGADURIA NAVAL A LA EMBAJADA ARGENTINA EN LA REPUBLICA FEDERATIVA DEL BRASIL"
+    },
+    {
+        "id_destino": "AGCH",
+        "descripcion": "AGREGADURIA NAVAL A LA EMBAJADA ARGENTINA EN LA REPUBLICA DE CHILE"
+    },
+    {
+        "id_destino": "AGCN",
+        "descripcion": "AGREGADURIA NAVAL A LA EMBAJADA ARGENTINA EN LA REPUBLICA POPULAR CHINA (CON EXTENSION ANTE LA REPUBLICA DE COREA)"
+    },
+    {
+        "id_destino": "AGCO",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA EN LA REPUBLICA DE COLOMBIA"
+    },
+    {
+        "id_destino": "AGCU",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA DE LA REPUBLICA ARGENTINA EN LA REPUBLICA DE CUBA"
+    },
+    {
+        "id_destino": "AGDO",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA EN LA REPUBLICA DOMINICANA (CON EXTENSION ANTE LA REPUBLICA DE HAITI)"
+    },
+    {
+        "id_destino": "AGEC",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA EN LA REPUBLICA DE ECUADOR"
+    },
+    {
+        "id_destino": "AGEG",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA EN LA REPUBLICA ARABE DE EGIPTO"
+    },
+    {
+        "id_destino": "AGES",
+        "descripcion": "AGREGADURIA NAVAL A LA EMBAJADA ARGENTINA EN EL REINO DE ESPAÑA (CON EXTENSION SOBRE EL REINO DE MARRUECOS Y REINO DE PAISES BAJOS)"
+    },
+    {
+        "id_destino": "AGEU",
+        "descripcion": "AGREGADURIA NAVAL A LA EMBAJADA ARGENTINA EN LOS ESTADOS UNIDOS DE AMERICA "
+    },
+    {
+        "id_destino": "AGFA",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA EN LA REPUBLICA DE FRANCIA"
+    },
+    {
+        "id_destino": "AGGB",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA EN EL REINO UNIDO DE GRAN BRETAÑA E IRLANDA DEL NORTE"
+    },
+    {
+        "id_destino": "AGGL",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA EN LA REPUBLICA DE ANGOLA"
+    },
+    {
+        "id_destino": "AGGT",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA EN LA REPUBLICA DE GUATEMALA (CON EXTENSION ANTE LAS REPUBLICAS DE EL SALVADOR, HONDURAS, NICARAGUA Y OBSERVADOR ANTE LA CONFERENCIA DE LAS FUERZAS ARMADAS CENTROAMERICANAS (CFAC))"
+    },
+    {
+        "id_destino": "AGGY",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA EN LA REPUBLICA DE GUYANA"
+    },
+    {
+        "id_destino": "AGIN",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA ENLA REPUBLICA DE LA INDIA"
+    },
+    {
+        "id_destino": "AGIS",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA EN EL ESTADO DE ISRAEL"
+    },
+    {
+        "id_destino": "AGIT",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA EN LA REPUBLICA DE ITALIA"
+    },
+    {
+        "id_destino": "AGJA",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA EN JAPON"
+    },
+    {
+        "id_destino": "AGME",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA EN LOS EEUU MEXICANOS"
+    },
+    {
+        "id_destino": "AGPE",
+        "descripcion": "AGREGADURIA NAVAL A LA EMBAJADA ARGENTINA EN LA REPUBLICA DEL PERU"
+    },
+    {
+        "id_destino": "AGPY",
+        "descripcion": "AGREGADURIA NAVAL A LA EMBAJADA ARGENTINA EN LA REPUBLICA DEL PARAGUAY"
+    },
+    {
+        "id_destino": "AGRU",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA EN LA FEDERACION RUSA"
+    },
+    {
+        "id_destino": "AGSA",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA EN LA REPUBLICA DE SUDAFRICA"
+    },
+    {
+        "id_destino": "AGSR",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA EN LA REPUBLICA DE SURINAM"
+    },
+    {
+        "id_destino": "AGUC",
+        "descripcion": "AGREGADURIA DE DEFENSA Y DE LAS FUERZAS ARMADAS A LA EMBAJADA ARGENTINA EN LA REPUBLICA DE UCRANIA"
+    },
+    {
+        "id_destino": "AGUR",
+        "descripcion": "AGREGADURIA NAVAL A LA EMBAJADA ARGENTINA EN LA REPUBLICA ORIENTAL DEL URUGUAY"
+    },
+    {
+        "id_destino": "AGVE",
+        "descripcion": "AGREGADURIA NAVAL A LA EMBAJADA ARGENTINA EN LA REPUBLICA BOLIVARIANA DE VENEZUELA"
+    },
+    {
+        "id_destino": "ANAT",
+        "descripcion": "AREA NAVAL ATLANTICA"
+    },
+    {
+        "id_destino": "ANAU",
+        "descripcion": "AREA NAVAL AUSTRAL"
+    },
+    {
+        "id_destino": "ANFL",
+        "descripcion": "AREA NAVAL FLUVIAL"
+    },
+    {
+        "id_destino": "APBH",
+        "descripcion": "AGRUPACION BUQUES HIDROGRAFICOS"
+    },
+    {
+        "id_destino": "APBT",
+        "descripcion": "AGRUPACION DE BUZOS TACTICOS"
+    },
+    {
+        "id_destino": "APCA",
+        "descripcion": "AGRUPACION DE COMANDOS ANFIBIOS"
+    },
+    {
+        "id_destino": "APLA",
+        "descripcion": "AGRUPACION LANCHAS RAPIDAS"
+    },
+    {
+        "id_destino": "APSC",
+        "descripcion": "AGRUPACION SERVICIOS DE CUARTEL"
+    },
+    {
+        "id_destino": "ARAZ",
+        "descripcion": "ARSENAL NAVAL AZOPARDO"
+    },
+    {
+        "id_destino": "ARCE",
+        "descripcion": "ARSENAL AERONAVAL COMANDANTE ESPORA"
+    },
+    {
+        "id_destino": "ARIM",
+        "descripcion": "ARSENAL DE INFANTERIA DE MARINA BATERIAS"
+    },
+    {
+        "id_destino": "ARMP",
+        "descripcion": "ARSENAL NAVAL MAR DEL PLATA"
+    },
+    {
+        "id_destino": "ARPB",
+        "descripcion": "ARSENAL NAVAL PUERTO BELGRANO"
+    },
+    {
+        "id_destino": "ASCA",
+        "descripcion": "CASINO NAVAL BUENOS AIRES"
+    },
+    { "id_destino": "ASCN", "descripcion": "CENTRO NAVAL" },
+    {
+        "id_destino": "ASLN",
+        "descripcion": "CENTRO DE GRADUADOS DEL LICEO NAVAL MILITAR ALMIRANTE GUILLERMO BROWN"
+    },
+    {
+        "id_destino": "ASOM",
+        "descripcion": "CIRCULO DE OFICIALES DE MAR"
+    },
+    {
+        "id_destino": "ASRA",
+        "descripcion": "CIRCULO DE SUBOFICIALES DE LA ARMADA"
+    },
+    {
+        "id_destino": "AUFA",
+        "descripcion": "AUDITORIA DE LAS FUERZAS ARMADAS"
+    },
+    {
+        "id_destino": "AVBA",
+        "descripcion": "AVISO A.R.A. BAHIA AGRADABLE A-23"
+    },
+    {
+        "id_destino": "AVES",
+        "descripcion": "AVISO A.R.A. ESTRECHO DE SAN CARLOS A-22"
+    },
+    {
+        "id_destino": "AVIM",
+        "descripcion": "AVISO A.R.A. ISLAS MALVINAS A-24"
+    },
+    {
+        "id_destino": "AVPA",
+        "descripcion": "AVISO A.R.A. PUERTO ARGENTINO A-21"
+    },
+    {
+        "id_destino": "AVTO",
+        "descripcion": "AVISO A.R.A. TENIENTE OLIVIERI A-2"
+    },
+    {
+        "id_destino": "BAAZ",
+        "descripcion": "BASE AERONAVAL ALMIRANTE ZAR"
+    },
+    {
+        "id_destino": "BACE",
+        "descripcion": "BASE AERONAVAL COMANDANTE TOMAS ESPORA"
+    },
+    {
+        "id_destino": "BAPI",
+        "descripcion": "BASE AERONAVAL PUNTA INDIO"
+    },
+    {
+        "id_destino": "BARD",
+        "descripcion": "BASE AERONAVAL RIO GRANDE PIONEROS AERONAVALES EN EL POLO SUR"
+    },
+    {
+        "id_destino": "BELU",
+        "descripcion": "BUQUE DE INSTRUCCION PESQUERO A.R.A. LUISITO  Q-51"
+    },
+    {
+        "id_destino": "BHAU",
+        "descripcion": "BUQUE OCEANOGRAFICO A.R.A. AUSTRAL Q-21"
+    },
+    {
+        "id_destino": "BHPD",
+        "descripcion": "BUQUE OCEANOGRAFICO A.R.A. PUERTO DESEADO Q-20"
+    },
+    {
+        "id_destino": "BHSH",
+        "descripcion": "BUQUE DE INVESTIGACIÓN CIENTÍFICA A.R.A. SHENU - Q-80"
+    },
+    {
+        "id_destino": "BIAA",
+        "descripcion": "BATALLON ANTIAEREO"
+    },
+    {
+        "id_destino": "BIAC",
+        "descripcion": "BATALLON DE ARTILLERIA DE CAMPAÑA Nº 1"
+    },
+    {
+        "id_destino": "BIC1",
+        "descripcion": "BATALLON DE COMUNICACIONES Nº 1 - ESCUELA"
+    },
+    {
+        "id_destino": "BICA",
+        "descripcion": "BATALLON COMANDO Y APOYO LOGISTICO"
+    },
+    {
+        "id_destino": "BIES",
+        "descripcion": "BATALLON DE ALUMNOS DE LA ESCUELA DE INFANTERIA DE MARINA"
+    },
+    {
+        "id_destino": "BIM2",
+        "descripcion": "BATALLON DE INFANTERIA DE MARINA Nº 2 ESCUELA CAPITAN DE FRAGATA DE INFANTERIA DE MARINA DN PEDRO EDGARDO GIACHINO"
+    },
+    {
+        "id_destino": "BIM3",
+        "descripcion": "BATALLON DE INFANTERIA DE MARINA Nº 3 ALMIRANTE ELEAZAR VIDELA"
+    },
+    {
+        "id_destino": "BIM4",
+        "descripcion": "BATALLON DE INFANTERIA DE MARINA Nº 4"
+    },
+    {
+        "id_destino": "BIM5",
+        "descripcion": "BATALLON DE INFANTERIA DE MARINA Nº 5 - ESCUELA"
+    },
+    {
+        "id_destino": "BISA",
+        "descripcion": "BATALLON DE SEGURIDAD DEL ESTADO MAYOR GENERAL DE LA ARMADA"
+    },
+    {
+        "id_destino": "BISP",
+        "descripcion": "BATALLON SEGURIDAD DE LA BASE NAVAL PUERTO BELGRANO"
+    },
+    {
+        "id_destino": "BIVH",
+        "descripcion": "BATALLON DE VEHICULOS ANFIBIOS Nº 1"
+    },
+    {
+        "id_destino": "BNIM",
+        "descripcion": "BASE DE INFANTERIA DE MARINA BATERIAS"
+    },
+    {
+        "id_destino": "BNMP",
+        "descripcion": "BASE NAVAL MAR DEL PLATA"
+    },
+    {
+        "id_destino": "BNPB",
+        "descripcion": "BASE NAVAL PUERTO BELGRANO"
+    },
+    {
+        "id_destino": "BNUS",
+        "descripcion": "BASE NAVAL USHUAIA ALMIRANTE BERISSO"
+    },
+    { "id_destino": "BNZA", "descripcion": "BASE NAVAL ZARATE" },
+    {
+        "id_destino": "BSBA",
+        "descripcion": "REFUGIO BALLVE"
+    },
+    {
+        "id_destino": "BSBE",
+        "descripcion": "REFUGIO BETBEDER"
+    },
+    { "id_destino": "BSCA", "descripcion": "BASE CAMARA" },
+    {
+        "id_destino": "BSCB",
+        "descripcion": "REFUGIO CAILLET BOIS"
+    },
+    {
+        "id_destino": "BSCF",
+        "descripcion": "REFUGIO CAPITAN FLIESS"
+    },
+    {
+        "id_destino": "BSDE",
+        "descripcion": "BASE DECEPCION"
+    },
+    {
+        "id_destino": "BSDO",
+        "descripcion": "REFUGIO DORIAN"
+    },
+    {
+        "id_destino": "BSGR",
+        "descripcion": "REFUGIO GRUSSAC"
+    },
+    {
+        "id_destino": "BSGU",
+        "descripcion": "REFUGIO GURRUCHAGA"
+    },
+    { "id_destino": "BSME", "descripcion": "BASE MELCHIOR" },
+    { "id_destino": "BSOR", "descripcion": "BASE ORCADAS" },
+    { "id_destino": "BSPE", "descripcion": "BASE PETREL" },
+    {
+        "id_destino": "BSSU",
+        "descripcion": "REFUGIO SUECIA"
+    },
+    {
+        "id_destino": "CBES",
+        "descripcion": "CORBETA A.R.A. ESPORA                         P-41"
+    },
+    {
+        "id_destino": "CBGO",
+        "descripcion": "CORBETA A.R.A. GOMEZ ROCA                     P-46"
+    },
+    {
+        "id_destino": "CBGR",
+        "descripcion": "CORBETA A.R.A. GRANVILLE                      P-33"
+    },
+    {
+        "id_destino": "CBPA",
+        "descripcion": "CORBETA A.R.A. PARKER                         P-44"
+    },
+    {
+        "id_destino": "CBRB",
+        "descripcion": "CORBETA A.R.A. ROBINSON                       P-45"
+    },
+    {
+        "id_destino": "CBRO",
+        "descripcion": "CORBETA A.R.A. ROSALES                        P-42"
+    },
+    {
+        "id_destino": "CBSP",
+        "descripcion": "CORBETA A.R.A. SPIRO                          P-43"
+    },
+    {
+        "id_destino": "CCAN",
+        "descripcion": "COMANDO CONJUNTO ANTÁRTICO"
+    },
+    {
+        "id_destino": "CDAA",
+        "descripcion": "COORDINADOR DEL AREA MARITIMA CAMAS ASESORIA ARGENTINA"
+    },
+    {
+        "id_destino": "CDAS",
+        "descripcion": "COORDINADOR DEL AREA MARITIMA DEL ATLANTICO SUR -CAMAS-"
+    },
+    {
+        "id_destino": "CESV",
+        "descripcion": "CENTRO DE SALUD Y VETERANOS DE GUERRA"
+    },
+    {
+        "id_destino": "CGBA",
+        "descripcion": "CONSEJO DE GUERRA DE COMANDO BUENOS AIRES"
+    },
+    {
+        "id_destino": "CGPB",
+        "descripcion": "CONSEJO DE GUERRA DE COMANDO PUERTO BELGRANO"
+    },
+    { "id_destino": "CHATA", "descripcion": "CHATA  E-202" },
+    {
+        "id_destino": "CIAT",
+        "descripcion": "CENTRO DE INTELIGENCIA ATLANTICA"
+    },
+    {
+        "id_destino": "CIAU",
+        "descripcion": "CENTRO DE INTELIGENCIA AUSTRAL"
+    },
+    {
+        "id_destino": "CIFA",
+        "descripcion": "CENTRO DE ADIESTRAMIENTO DE LA FUERZA AERONAVAL Nº 2"
+    },
+    {
+        "id_destino": "CIFL",
+        "descripcion": "CENTRO DE INTELIGENCIA FLUVIAL"
+    },
+    {
+        "id_destino": "CION",
+        "descripcion": "CENTRO DE INTELIGENCIA DE OPERACIONES NAVALES"
+    },
+    {
+        "id_destino": "CIRG",
+        "descripcion": "CENTRO DE INTELIGENCIA AUSTRAL - REGIONAL RIO GRANDE "
+    },
+    {
+        "id_destino": "CITT",
+        "descripcion": "CENTRO DE INSTRUCCIÓN Y ADIESTRAMIENTO EN TÉCNICAS Y TÁCTICAS NAVALES"
+    },
+    {
+        "id_destino": "CJAA",
+        "descripcion": "CONSEJO DE DISCIPLINA DEL AREA NAVAL ATLANTICA"
+    },
+    {
+        "id_destino": "CJAM",
+        "descripcion": "CONSEJO DE DISCIPLINA DEL COMANDO DE LA AVIACION NAVAL"
+    },
+    {
+        "id_destino": "CJAU",
+        "descripcion": "CONSEJO DE DISCIPLINA DEL AREA NAVAL AUSTRAL"
+    },
+    {
+        "id_destino": "CJBA",
+        "descripcion": "CONSEJO DE DISCIPLINA DE LA ZONA NAVAL BUENOS (DIAP)"
+    },
+    {
+        "id_destino": "CJCA",
+        "descripcion": "CONSEJO DE DISCIPLINA DEL COMANDO DE ADIESTRAMIENTO  Y ALISTAMIENTO DE LA ARMADA"
+    },
+    {
+        "id_destino": "CJEN",
+        "descripcion": "CONSEJO DE DISCIPLINA DE LA ESCUELA NAVAL MILITAR"
+    },
+    {
+        "id_destino": "CJFM",
+        "descripcion": "CONSEJO DE DISCIPLINA DEL COMANDO DE LA FLOTA DE MAR"
+    },
+    {
+        "id_destino": "CJGE",
+        "descripcion": "CONSEJO GENERAL DE DISCIPLINA DE LA ARMADA"
+    },
+    {
+        "id_destino": "CJIM",
+        "descripcion": "CONSEJO DE DISCIPLINA DEL COMANDO DE LA INFANTERIA DE MARINA"
+    },
+    {
+        "id_destino": "CKIA",
+        "descripcion": "COMPAÑIA DE INGENIEROS ANFIBIOS"
+    },
+    {
+        "id_destino": "CMEC",
+        "descripcion": "COMISION EVALUADORA DE CONTRATACIONES DE LA ARMADA"
+    },
+    {
+        "id_destino": "COAA",
+        "descripcion": "COMANDO DE ADIESTRAMIENTO Y ALISTAMIENTO DE LA ARMADA"
+    },
+    {
+        "id_destino": "COAL",
+        "descripcion": "COMANDO NAVAL ANFIBIO Y LOGÍSTICO"
+    },
+    {
+        "id_destino": "COAN",
+        "descripcion": "COMANDO DE LA AVIACION NAVAL"
+    },
+    {
+        "id_destino": "COCM",
+        "descripcion": "COMANDO CONJUNTO MARITIMO"
+    },
+    {
+        "id_destino": "COCP",
+        "descripcion": "COMANDO DE LA CAPITANÍA DE PUERTO BELGRANO"
+    },
+    {
+        "id_destino": "COFM",
+        "descripcion": "COMANDO DE LA FLOTA DE MAR"
+    },
+    {
+        "id_destino": "COFS",
+        "descripcion": "COMANDO DE LA FUERZA DE SUBMARINOS"
+    },
+    {
+        "id_destino": "COIE",
+        "descripcion": "COMANDO DE INSTRUCCION Y EVALUACION DE LA INFANTERIA DE MARINA"
+    },
+    {
+        "id_destino": "COIM",
+        "descripcion": "COMANDO DE LA INFANTERIA DE MARINA"
+    },
+    {
+        "id_destino": "COPP",
+        "descripcion": "COMANDANTE NAVAL DE LOS PUERTOS DE LA PAZ, PARANA Y DIAMANTE"
+    },
+    {
+        "id_destino": "COSF",
+        "descripcion": "COMANDANTE NAVAL DE LOS PUERTOS DE SANTA FE Y RECONQUISTA"
+    },
+    {
+        "id_destino": "COTE",
+        "descripcion": "COMANDO CONJUNTO TERRITORIAL DE LA ZONA DE INTERIOR -COTERIT-"
+    },
+    {
+        "id_destino": "COTM",
+        "descripcion": "COMANDO NAVAL DE TRANSITO MARITIMO"
+    },
+    {
+        "id_destino": "COTN",
+        "descripcion": "COMANDO DE TRANSPORTES NAVALES"
+    },
+    {
+        "id_destino": "COTR",
+        "descripcion": "COMANDO CONJUNTO DE TRANSPORTE -COTRAS-"
+    },
+    {
+        "id_destino": "CPMA",
+        "descripcion": "CAPELLANIA MAYOR DE LA ARMADA"
+    },
+    {
+        "id_destino": "CRVB",
+        "descripcion": "CENTRO RECREATIVO VETERANOS DEL CRUCERO GENERAL BELGRANO"
+    },
+    {
+        "id_destino": "CUEM",
+        "descripcion": "CUARTEL GENERAL DEL ESTADO MAYOR GENERAL DE LA ARMADA"
+    },
+    {
+        "id_destino": "CURS",
+        "descripcion": "(USO EXCLUSIVO DE DGPN-DIAP-JEPL) DIAP CURSANTES Y NO DISPONIBLES"
+    },
+    {
+        "id_destino": "DAEH",
+        "descripcion": "DEPARTAMENTO ESTUDIOS HISTORICOS NAVALES"
+    },
+    {
+        "id_destino": "DEAB",
+        "descripcion": "DESTRUCTOR A.R.A. ALMIRANTE BROWN             D-10"
+    },
+    {
+        "id_destino": "DEHA",
+        "descripcion": "DESTRUCTOR A.R.A. HEROINA                     D-12"
+    },
+    {
+        "id_destino": "DELA",
+        "descripcion": "DESTRUCTOR A.R.A. LA ARGENTINA                D-11"
+    },
+    {
+        "id_destino": "DESI",
+        "descripcion": "DESTRUCTOR A.R.A. SARANDI                     D-13"
+    },
+    {
+        "id_destino": "DGAF",
+        "descripcion": "DIRECCION GENERAL DE ADMINISTRACION Y FINANZAS DE LA ARMADA"
+    },
+    {
+        "id_destino": "DGAJ",
+        "descripcion": "DIRECCION GENERAL DE ASUNTOS JURIDICOS DE LA ARMADA"
+    },
+    {
+        "id_destino": "DGCI",
+        "descripcion": "DIRECCIÓN GENERAL DE COMUNICACIONES, INFORMÁTICA Y CIBERDEFENSA DE LA ARMADA"
+    },
+    {
+        "id_destino": "DGED",
+        "descripcion": "DIRECCION GENERAL DE EDUCACION DE LA ARMADA"
+    },
+    {
+        "id_destino": "DGIA",
+        "descripcion": "DIRECCION GENERAL DE INTELIGENCIA DE LA ARMADA"
+    },
+    {
+        "id_destino": "DGID",
+        "descripcion": "DIRECCION GENERAL DE INVESTIGACION Y DESARROLLO DE LA ARMADA"
+    },
+    {
+        "id_destino": "DGIT",
+        "descripcion": "DIRECCION GENERAL DE INTENDENCIA DE LA ARMADA"
+    },
+    {
+        "id_destino": "DGMN",
+        "descripcion": "DIRECCION GENERAL DEL MATERIAL DE LA ARMADA"
+    },
+    {
+        "id_destino": "DGOD",
+        "descripcion": "DIRECCION GENERAL DE ORGANIZACIÓN Y DOCTRINA DE LA ARMADA"
+    },
+    {
+        "id_destino": "DGPN",
+        "descripcion": "DIRECCION GENERAL DEL PERSONAL Y BIENESTAR DE LA ARMADA"
+    },
+    {
+        "id_destino": "DGPR",
+        "descripcion": "DIRECCION GENERAL DE PLANES, PROGRAMAS Y PRESUPUESTO DE LA ARMADA"
+    },
+    {
+        "id_destino": "DGSA",
+        "descripcion": "DIRECCION GENERAL DE SALUD DE LA ARMADA"
+    },
+    {
+        "id_destino": "DIAB",
+        "descripcion": "DIRECCION DE ABASTECIMIENTOS DE LA ARMADA"
+    },
+    {
+        "id_destino": "DIAE",
+        "descripcion": "DIRECCION DE ARMAS Y ELECTRONICA NAVAL"
+    },
+    {
+        "id_destino": "DIAP",
+        "descripcion": "DIRECCION DE PERSONAL DE LA ARMADA"
+    },
+    {
+        "id_destino": "DIBN",
+        "descripcion": "DIRECCION DE BIENESTAR DE LA ARMADA"
+    },
+    {
+        "id_destino": "DICD",
+        "descripcion": "DIRECCIÓN DE CIBERDEFENSA DE LA ARMADA"
+    },
+    {
+        "id_destino": "DICE",
+        "descripcion": "DIRECCION DE CASCO, ELECTRICIDAD Y MAQUINAS NAVALES"
+    },
+    {
+        "id_destino": "DICO",
+        "descripcion": "DIRECCIÓN DE COMUNICACIONES DE LA ARMADA"
+    },
+    {
+        "id_destino": "DIEC",
+        "descripcion": "DIRECCIÓN DE INFORMÁTICA DE LA ARMADA"
+    },
+    {
+        "id_destino": "DIEJ",
+        "descripcion": "DIRECCION EJECUTIVA DE LA DIRECCION GENERAL DE MATERIAL DE LA ARMADA"
+    },
+    {
+        "id_destino": "DIIF",
+        "descripcion": "DIRECCION DE INFRAESTRUCTURAS"
+    },
+    {
+        "id_destino": "DIIM",
+        "descripcion": "DIRECCION DE INTERESES MARITIMOS"
+    },
+    {
+        "id_destino": "DIIP",
+        "descripcion": "DIRECCION DE INVERSION PUBLICA DE LA ARMADA"
+    },
+    {
+        "id_destino": "DIIV",
+        "descripcion": "DIRECCION DE INVESTIGACION DE LA ARMADA"
+    },
+    {
+        "id_destino": "DIMA",
+        "descripcion": "DIRECCION DEL MATERIAL AERONAVAL"
+    },
+    {
+        "id_destino": "DIMI",
+        "descripcion": "DIRECCIÓN DEL MATERIAL DE LA INFANTERÍA DE MARINA"
+    },
+    {
+        "id_destino": "DIMN",
+        "descripcion": "DIRECCION DE MANTENIMIENTO NAVAL"
+    },
+    {
+        "id_destino": "DINA",
+        "descripcion": "DIRECCIÓN NACIONAL DEL ANTÁRTICO (DNA)"
+    },
+    {
+        "id_destino": "DIOB",
+        "descripcion": "DIRECCION DE OBTENCION DE LA ARMADA "
+    },
+    {
+        "id_destino": "DIPL",
+        "descripcion": "DIRECCION DE PLANES DE LA ARMADA"
+    },
+    {
+        "id_destino": "DIPR",
+        "descripcion": "DIRECCION DE PROGRAMAS Y PRESUPUESTO DE LA ARMADA"
+    },
+    {
+        "id_destino": "DIPY",
+        "descripcion": "DIRECCION DE PROYECTOS DE LA ARMADA"
+    },
+    {
+        "id_destino": "DIRI",
+        "descripcion": "DIRECCION DE RELACIONES INSTITUCIONALES DE LA ARMADA"
+    },
+    {
+        "id_destino": "DISA",
+        "descripcion": "DIRECCION DE SANIDAD DE LA ARMADA"
+    },
+    {
+        "id_destino": "DITT",
+        "descripcion": "DIRECCION DE TRACCION TERRESTRE"
+    },
+    {
+        "id_destino": "DLBA",
+        "descripcion": "DELEGACION NAVAL -BUENOS AIRES-"
+    },
+    {
+        "id_destino": "DLBB",
+        "descripcion": "DELEGACION NAVAL -BAHIA BLANCA-"
+    },
+    {
+        "id_destino": "DLCD",
+        "descripcion": "DELEGACION NAVAL -CORDOBA-"
+    },
+    {
+        "id_destino": "DLCN",
+        "descripcion": "DELEGACION NAVAL -CONCORDIA-"
+    },
+    {
+        "id_destino": "DLCR",
+        "descripcion": "DELEGACION NAVAL -CORRIENTES-"
+    },
+    {
+        "id_destino": "DLLP",
+        "descripcion": "DELEGACION NAVAL -LA PLATA-"
+    },
+    {
+        "id_destino": "DLME",
+        "descripcion": "DELEGACION NAVAL -MENDOZA-"
+    },
+    {
+        "id_destino": "DLMP",
+        "descripcion": "DELEGACION NAVAL -MAR DEL PLATA-"
+    },
+    {
+        "id_destino": "DLNQ",
+        "descripcion": "DELEGACION NAVAL -NEUQUEN-"
+    },
+    {
+        "id_destino": "DLPO",
+        "descripcion": "DELEGACION NAVAL -POSADAS-"
+    },
+    {
+        "id_destino": "DLRO",
+        "descripcion": "DELEGACION NAVAL -ROSARIO-"
+    },
+    {
+        "id_destino": "DLSA",
+        "descripcion": "DELEGACION NAVAL -SALTA-"
+    },
+    {
+        "id_destino": "DLSF",
+        "descripcion": "DELEGACION NAVAL -SANTA FE-"
+    },
+    {
+        "id_destino": "DLSJ",
+        "descripcion": "DELEGACION NAVAL -SAN JUAN-"
+    },
+    {
+        "id_destino": "DLTU",
+        "descripcion": "DELEGACION NAVAL -TUCUMAN-"
+    },
+    {
+        "id_destino": "DNCR",
+        "descripcion": "DESTACAMENTO NAVAL COMODORO RIVADAVIA"
+    },
+    {
+        "id_destino": "DNPA",
+        "descripcion": "DESTACAMENTO NAVAL PUERTO ALMANZA"
+    },
+    {
+        "id_destino": "DNPL",
+        "descripcion": "DESTACAMENTO NAVAL DE PLAYA"
+    },
+    {
+        "id_destino": "DNPO",
+        "descripcion": "DESTACAMENTO NAVAL POSADAS"
+    },
+    {
+        "id_destino": "DNRD",
+        "descripcion": "DESTACAMENTO NAVAL RIO GRANDE"
+    },
+    {
+        "id_destino": "DQY2",
+        "descripcion": "DIQUE FLOTANTE N°2"
+    },
+    {
+        "id_destino": "DQY3",
+        "descripcion": "DIQUE FLOTANTE N° 3"
+    },
+    {
+        "id_destino": "DUND",
+        "descripcion": "DEPARTAMENTO UNIDADES NAVALES A DESACTIVAR - ZONA NAVAL 75"
+    },
+    {
+        "id_destino": "DVCB",
+        "descripcion": "DIVISIÓN DE CORBETAS"
+    },
+    {
+        "id_destino": "DVCM",
+        "descripcion": "DIVISION CONTRAINTELIGENCIA MAR DEL PLATA"
+    },
+    {
+        "id_destino": "DVCP",
+        "descripcion": "DIVISION CONTRAINTELIGENCIA PUERTO BELGRANO"
+    },
+    {
+        "id_destino": "DVCU",
+        "descripcion": "DIVISION DE CONTRAINTELIGENCIA USHUAIA"
+    },
+    {
+        "id_destino": "DVCZ",
+        "descripcion": "DIVISION DE CONTRAINTELIGENCIA ZARATE"
+    },
+    {
+        "id_destino": "DVDE",
+        "descripcion": "DIVISIÓN DE DESTRUCTORES"
+    },
+    {
+        "id_destino": "DVPM",
+        "descripcion": "DIVISION PATRULLADO MARITIMO"
+    },
+    {
+        "id_destino": "EA1V",
+        "descripcion": "ESCUADRILLA AERONAVAL DE VIGILANCIA MARITIMA"
+    },
+    {
+        "id_destino": "EA2S",
+        "descripcion": "ESCUADRILLA AERONAVAL ANTISUBMARINA"
+    },
+    {
+        "id_destino": "EA32",
+        "descripcion": "SEGUNDA ESCUADRILLA AERONAVAL DE CAZA Y ATAQUE"
+    },
+    {
+        "id_destino": "EA41",
+        "descripcion": "PRIMERA ESCUADRILLA AERONAVAL DE ATAQUE"
+    },
+    {
+        "id_destino": "EA6E",
+        "descripcion": "ESCUADRILLA AERONAVAL DE EXPLORACION"
+    },
+    {
+        "id_destino": "EAH1",
+        "descripcion": "PRIMERA ESCUADRILLA AERONAVAL DE HELICOPTEROS"
+    },
+    {
+        "id_destino": "EAH2",
+        "descripcion": "SEGUNDA ESCUADRILLA AERONAVAL DE HELICOPTEROS"
+    },
+    {
+        "id_destino": "EAN1",
+        "descripcion": "ESCUADRA AERONAVAL Nº 1"
+    },
+    {
+        "id_destino": "EAN2",
+        "descripcion": "ESCUADRA AERONAVAL Nº 2"
+    },
+    {
+        "id_destino": "EAN3",
+        "descripcion": "ESCUADRA AERONAVAL Nº 3"
+    },
+    {
+        "id_destino": "EAN6",
+        "descripcion": "ESCUADRA AERONAVAL Nº 6"
+    },
+    {
+        "id_destino": "EDRI",
+        "descripcion": "ESCUADRILLA DE RIOS"
+    },
+    {
+        "id_destino": "EMCO",
+        "descripcion": "ESTADO MAYOR CONJUNTO DE LAS FUERZAS ARMADAS"
+    },
+    {
+        "id_destino": "EMEJ",
+        "descripcion": "ESTADO MAYOR GENERAL DEL EJERCITO"
+    },
+    {
+        "id_destino": "EMFA",
+        "descripcion": "ESTADO MAYOR GENERAL DE LA FUERZA AEREA"
+    },
+    {
+        "id_destino": "EMGA",
+        "descripcion": "JEFATURA DEL ESTADO MAYOR GENERAL DE LA ARMADA"
+    },
+    {
+        "id_destino": "ESAN",
+        "descripcion": "ESCUELA DE AVIACION NAVAL"
+    },
+    {
+        "id_destino": "ESAP",
+        "descripcion": "ESCUELA DE APRENDICES"
+    },
+    { "id_destino": "ESBU", "descripcion": "ESCUELA DE BUCEO" },
+    {
+        "id_destino": "ESCM",
+        "descripcion": "ESCUELA DE CIENCIAS DEL MAR"
+    },
+    {
+        "id_destino": "ESDN",
+        "descripcion": "ESCUELA DE DEFENSA NACIONAL"
+    },
+    {
+        "id_destino": "ESGC",
+        "descripcion": "ESCUELA DE GUERRA CONJUNTA"
+    },
+    {
+        "id_destino": "ESGN",
+        "descripcion": "ESCUELA DE GUERRA NAVAL"
+    },
+    {
+        "id_destino": "ESNF",
+        "descripcion": "ESCUELA NACIONAL FLUVIAL COMODORO ANTONIO SOMELLERA"
+    },
+    {
+        "id_destino": "ESNM",
+        "descripcion": "ESCUELA NAVAL MILITAR"
+    },
+    {
+        "id_destino": "ESNN",
+        "descripcion": "ESCUELA NACIONAL DE NAUTICA MANUEL BELGRANO"
+    },
+    {
+        "id_destino": "ESNP",
+        "descripcion": "ESCUELA NACIONAL DE PESCA COMANDANTE LUIS PIEDRABUENA"
+    },
+    {
+        "id_destino": "ESOA",
+        "descripcion": "ESCUELA DE OFICIALES DE LA ARMADA"
+    },
+    {
+        "id_destino": "ESSA",
+        "descripcion": "ESCUELA DE SUBOFICIALES DE LA ARMADA"
+    },
+    {
+        "id_destino": "ESSU",
+        "descripcion": "ESCUELA DE SUBMARINOS"
+    },
+    {
+        "id_destino": "ESTP",
+        "descripcion": "ESCUELA TECNICA BASICA PUNTA INDIO"
+    },
+    {
+        "id_destino": "ETAE",
+        "descripcion": "ESTACION AERONAVAL EZEIZA"
+    },
+    {
+        "id_destino": "ETAU",
+        "descripcion": "ESTACIÓN AERONAVAL USHUAIA"
+    },
+    {
+        "id_destino": "ETBS",
+        "descripcion": "ESTACION CONTROL DE TRANSITO MARITIMO BUEN SUCESO"
+    },
+    {
+        "id_destino": "ETCA",
+        "descripcion": "ESTACION CONTROL DE TRANSITO MARITIMO BECASSES"
+    },
+    {
+        "id_destino": "ETH1",
+        "descripcion": "ESTACION CONTROL DE TRANSITO MARITIMO HITO 1"
+    },
+    {
+        "id_destino": "FAE1",
+        "descripcion": "FUERZA AERONAVAL Nº 1"
+    },
+    {
+        "id_destino": "FAE2",
+        "descripcion": "FUERZA AERONAVAL Nº 2"
+    },
+    {
+        "id_destino": "FAE3",
+        "descripcion": "FUERZA AERONAVAL Nº 3"
+    },
+    {
+        "id_destino": "FAIA",
+        "descripcion": "FUERZA DE INFANTERIA DE MARINA AUSTRAL"
+    },
+    {
+        "id_destino": "FAIF",
+        "descripcion": "FUERZA DE INFANTERIA DE MARINA DE LA FLOTA DE MAR TENIENTE DE NAVIO DN. CANDIDO DE LASALA"
+    },
+    {
+        "id_destino": "FDAR",
+        "descripcion": "FACULTAD DE LA ARMADA ARGENTINA -“UNIVERSIDAD DE LA DEFENSA NACIONAL”"
+    },
+    {
+        "id_destino": "FRLI",
+        "descripcion": "BUQUE ESCUELA FRAGATA A.R.A. LIBERTAD         Q-2"
+    },
+    {
+        "id_destino": "GRHI",
+        "descripcion": "GRUPO MANTENIMIENTO ROMPEHIELOS A.R.A. ALMIRANTE IRIZAR - ZONA NAVAL50"
+    },
+    {
+        "id_destino": "GRPA",
+        "descripcion": "GRUPO MANTENIMIENTO AVISOS TIPOPUERTO ARGENTINO - ZONA NAVAL 75"
+    },
+    {
+        "id_destino": "HNPB",
+        "descripcion": "HOSPITAL NAVAL PUERTO BELGRANO"
+    },
+    {
+        "id_destino": "HNPM",
+        "descripcion": "HOSPITAL NAVAL BUENOS AIRES CIRUJANO MAYOR DOCTOR PEDRO MALLO"
+    },
+    {
+        "id_destino": "HNUS",
+        "descripcion": "HOSPITAL NAVAL USHUAIA"
+    },
+    {
+        "id_destino": "IBBA",
+        "descripcion": "INTENDENCIA NAVAL BUENOS AIRES"
+    },
+    {
+        "id_destino": "IBMP",
+        "descripcion": "INTENDENCIA NAVAL MAR DEL PLATA"
+    },
+    {
+        "id_destino": "IBPB",
+        "descripcion": "INTENDENCIA NAVAL PUERTO BELGRANO"
+    },
+    {
+        "id_destino": "IBUS",
+        "descripcion": "INTENDENCIA NAVAL USHUAIA"
+    },
+    {
+        "id_destino": "IIFA",
+        "descripcion": "INSTITUTO DE INTELIGENCIA DE LAS FUERZAS ARMADAS"
+    },
+    {
+        "id_destino": "INAA",
+        "descripcion": "INSTITUTO ANTARTICO ARGENTINO"
+    },
+    {
+        "id_destino": "INAN",
+        "descripcion": "INSTITUTO ARGENTINO DE NAVEGACION"
+    },
+    {
+        "id_destino": "INBR",
+        "descripcion": "INSTITUTO NACIONAL BROWNIANO"
+    },
+    {
+        "id_destino": "INIV",
+        "descripcion": "INSTITUTO DE INVESTIGACIONES CIENTIFICAS Y TECNICAS DE LAS FUERZAS ARMADAS -CITEFA-"
+    },
+    {
+        "id_destino": "INPE",
+        "descripcion": "INSTITUTO PENAL DE LAS FUERZAS ARMADAS"
+    },
+    {
+        "id_destino": "INRP",
+        "descripcion": "INSTITUTO DE AYUDA FINANCIERA PARA EL PAGO DE RETIROS Y PENSIONES MILITARES"
+    },
+    {
+        "id_destino": "ISGA",
+        "descripcion": "INSPECCIÓN GENERAL DE LA ARMADA"
+    },
+    {
+        "id_destino": "JECN",
+        "descripcion": "JEFATURA DE LA CONFERENCIA NAVAL INTERAMERICANA"
+    },
+    {
+        "id_destino": "JEMA",
+        "descripcion": "JEFATURA DE MANTENIMIENTO Y ARSENALES DE LA ARMADA"
+    },
+    {
+        "id_destino": "JEMD",
+        "descripcion": "JEFATURA MILITAR DE LA DIRECCION GENERAL DE EDUCACION DE LA ARMADA"
+    },
+    {
+        "id_destino": "JEOR",
+        "descripcion": "JEFATURA DE ORGANICA DE LA ARMADA"
+    },
+    {
+        "id_destino": "JEPE",
+        "descripcion": "JEFATURA DE POLITICAS, ESTRATEGIA Y DOCTRINA DE LA ARMADA"
+    },
+    {
+        "id_destino": "JEPM",
+        "descripcion": "JEFATURA DE PROGRAMAS DE LA ARMADA"
+    },
+    {
+        "id_destino": "JEPR",
+        "descripcion": "JEFATURA DE PRESUPUESTO DE LA ARMADA"
+    },
+    {
+        "id_destino": "JUID",
+        "descripcion": "JUNTA INTERAMERICANA DE DEFENSA"
+    },
+    {
+        "id_destino": "LGPA",
+        "descripcion": "BUQUE LOGISTICO A.R.A. PATAGONIA              B-1"
+    },
+    {
+        "id_destino": "LNAB",
+        "descripcion": "LICEO NAVAL MILITAR ALMIRANTE GUILLERMO BROWN"
+    },
+    {
+        "id_destino": "LNAS",
+        "descripcion": "LICEO NAVAL MILITAR ALMIRANTE STORNI"
+    },
+    {
+        "id_destino": "LPBD",
+        "descripcion": "LANCHA PATRULLERA RAPIDA A.R.A. BARADERO      P-61"
+    },
+    {
+        "id_destino": "LPBQ",
+        "descripcion": "LANCHA PATRULLERA RAPIDA A.R.A. BARRANQUERAS  P-62"
+    },
+    {
+        "id_destino": "LPCL",
+        "descripcion": "LANCHA PATRULLERA RAPIDA A.R.A. CLORINDA      P-63"
+    },
+    {
+        "id_destino": "LPCU",
+        "descripcion": "LANCHA PATRULLERA RAPIDA A.R.A. CONCEPCION DEL URUGUAY  P-64"
+    },
+    {
+        "id_destino": "LPPM",
+        "descripcion": "LANCHA PATRULLERA A.R.A. PUNTA MOGOTES        P-65"
+    },
+    {
+        "id_destino": "LPRS",
+        "descripcion": "LANCHA PATRULLERA A.R.A. RIO SANTIAGO         P-66"
+    },
+    {
+        "id_destino": "LPZU",
+        "descripcion": "LANCHA PATRULLERA A.R.A. ZURUBI               P-55"
+    },
+    {
+        "id_destino": "LRID",
+        "descripcion": "LANCHA RAPIDA A.R.A. INDOMITA                 P-86"
+    },
+    {
+        "id_destino": "LRIT",
+        "descripcion": "LANCHA RAPIDA A.R.A. INTREPIDA                P-85"
+    },
+    {
+        "id_destino": "MIDN",
+        "descripcion": "MINISTERIO DE DEFENSA NACIONAL"
+    },
+    {
+        "id_destino": "MNBO",
+        "descripcion": "MISION NAVAL ARGENTINA DE INSTRUCCION EN EL ESTADO PLURINACIONAL DE BOLIVIA"
+    },
+    {
+        "id_destino": "MNLA",
+        "descripcion": "MISION NAVAL LOGISTICA EN LOS ESTADOS UNIDOS DE AMERICA"
+    },
+    {
+        "id_destino": "MNLE",
+        "descripcion": "MISION  NAVAL LOGISTICA EN EUROPA"
+    },
+    {
+        "id_destino": "MNPA",
+        "descripcion": "MISION NAVAL ARGENTINA DE INSTRUCCION EN LA REPUBLICA DEL PARAGUAY"
+    },
+    {
+        "id_destino": "MPCR",
+        "descripcion": "BUQUE MULTIPROPOSITO A.R.A. CIUDAD DE ROSARIO     Q-62"
+    },
+    {
+        "id_destino": "MPCZ",
+        "descripcion": "BUQUE MULTIPROPOSITO A.R.A. CIUDAD DE ZARATE      Q-61"
+    },
+    {
+        "id_destino": "MPPA",
+        "descripcion": "BUQUE MULTIPROPOSITO A.R.A. PUNTA ALTA            Q-63"
+    },
+    {
+        "id_destino": "MUAN",
+        "descripcion": "MUSEO DE LA AVIACION NAVAL ARGENTINA"
+    },
+    {
+        "id_destino": "MUNN",
+        "descripcion": "MUSEO NAVAL DE LA NACION"
+    },
+    {
+        "id_destino": "MUPS",
+        "descripcion": "BUQUE MUSEO FRAGATA A.R.A. PRESIDENTE SARMIENTO   Q-1"
+    },
+    {
+        "id_destino": "MUUR",
+        "descripcion": "BUQUE MUSEO CORBETA A.R.A. URUGUAY"
+    },
+    {
+        "id_destino": "OCBA",
+        "descripcion": "OCONTRAM BUENOS AIRES"
+    },
+    {
+        "id_destino": "OCBB",
+        "descripcion": "OCONTRAM BAHIA BLANCA"
+    },
+    {
+        "id_destino": "OCCR",
+        "descripcion": "OCONTRAM COMODORO RIVADAVIA"
+    },
+    {
+        "id_destino": "OCMP",
+        "descripcion": "OCONTRAM MAR DEL PLATA"
+    },
+    { "id_destino": "OCPD", "descripcion": "OCONTRAM DESEADO" },
+    { "id_destino": "OCPM", "descripcion": "OCONTRAM MADRYN" },
+    { "id_destino": "OCQU", "descripcion": "OCONTRAM QUEQUEN" },
+    {
+        "id_destino": "OCRD",
+        "descripcion": "OCONTRAM RIO GRANDE"
+    },
+    {
+        "id_destino": "OCRG",
+        "descripcion": "OCONTRAM RIO GALLEGOS"
+    },
+    { "id_destino": "OCRO", "descripcion": "OCONTRAM ROSARIO" },
+    { "id_destino": "OCUS", "descripcion": "OCONTRAM USHUAIA" },
+    {
+        "id_destino": "OFRM",
+        "descripcion": "OFICINA REGIONAL DE SEGURIDAD AMBIENTAL (ORSA) ZONA 69"
+    },
+    {
+        "id_destino": "OFRP",
+        "descripcion": "OFICINA REGIONAL DE SEGURIDAD AMBIENTAL (ORSA) ZONA 75"
+    },
+    {
+        "id_destino": "OFRU",
+        "descripcion": "OFICINA REGIONAL DE SEGURIDAD AMBIENTAL (ORSA) ZONA 98"
+    },
+    {
+        "id_destino": "OFSJ",
+        "descripcion": "OFICINA DOCUMENTACIÓN DEL PERSONAL TRIPULANTE DEL SUBMARINO A.R.A. SAN JUAN"
+    },
+    {
+        "id_destino": "PAKI",
+        "descripcion": "PATRULLERO A.R.A. KING                        P-21"
+    },
+    {
+        "id_destino": "PNAR",
+        "descripcion": "PREFECTURA NAVAL ARGENTINA"
+    },
+    {
+        "id_destino": "POBD",
+        "descripcion": "PATRULLERO OCEÁNICO A.R.A. BOUCHARD P-51"
+    },
+    {
+        "id_destino": "POCC",
+        "descripcion": "PATRULLERO OCEÁNICO A.R.A. CONTRAALMIRANTE CORDERO"
+    },
+    {
+        "id_destino": "POPB",
+        "descripcion": "PATRULLERO OCEÁNICO A.R.A PIEDRABUENA P-52"
+    },
+    {
+        "id_destino": "POST",
+        "descripcion": "PATRULLERO OCEÁNICO A.R.A. STORNI               P-53"
+    },
+    {
+        "id_destino": "PYBU",
+        "descripcion": "PROYECTO REUBICACIÓN DE LA BASE NAVAL INTEGRADA USHUAIA"
+    },
+    {
+        "id_destino": "PYD2",
+        "descripcion": "PROYECTO DE REPARACION Y MODERNIZACION DEL DIQUE DE CARENA Nº2 Y SISTEMAS ASOCIADOS"
+    },
+    {
+        "id_destino": "PYDE",
+        "descripcion": "PROYECTO TRASLADO DE LA DIRECCIÓN DE EDUCACIÓN DE LA ARMADA"
+    },
+    {
+        "id_destino": "PYGO",
+        "descripcion": "PROYECTO ESCUELA GOLETA DEL BICENTENARIO"
+    },
+    {
+        "id_destino": "PYME",
+        "descripcion": "PROYECTO MODERNIZACION Y ACTUALIZACION DE UNIDADES TIPO MEKO"
+    },
+    {
+        "id_destino": "PYPA",
+        "descripcion": "PROYECTO CONSTRUCCIÓN DE LOS PATRULLEROS OCEÁNICOS MULTIPROPÓSITO"
+    },
+    {
+        "id_destino": "PYRE",
+        "descripcion": "PROYECTO REMOTORIZACIÓN DE LANCHAS Y REMOLCADORES"
+    },
+    {
+        "id_destino": "PYSU",
+        "descripcion": "PROYECTO SUBMARINOS"
+    },
+    {
+        "id_destino": "PYVI",
+        "descripcion": "PROYECTO RECUPERACIÓN VEHÍCULOS ANFIBIOS DE INFANTERÍA DE MARINA"
+    },
+    {
+        "id_destino": "REON",
+        "descripcion": "REMOLCADOR A.R.A. ONA - R-9"
+    },
+    {
+        "id_destino": "RETU",
+        "descripcion": "REMOLCADOR A.R.A. TEHUELCHE                   R-3"
+    },
+    {
+        "id_destino": "REZE",
+        "descripcion": "REMOLCADOR A.R.A. ZEUS R - 20"
+    },
+    {
+        "id_destino": "RHAI",
+        "descripcion": "ROMPEHIELOS A.R.A. ALMIRANTE IRIZAR           Q-5"
+    },
+    {
+        "id_destino": "ROMI",
+        "descripcion": "REPRESENTANTE ALTERNO PERMANENTE ANTE LA (O.M.I.) EN EL REINO UNIDO DE GRAN BRETAÑA"
+    },
+    {
+        "id_destino": "SARA",
+        "descripcion": "SERVICIO AUXILIAR DE RADIOAFICIONADOS DE LA ARMADA"
+    },
+    {
+        "id_destino": "SDIE",
+        "descripcion": "SEDE DE INVESTIGACION Y ESTUDIOS ESTRATEGICOS NAVALES DEL INSTITUTO UNIVERSITARIO NAVAL"
+    },
+    {
+        "id_destino": "SGEM",
+        "descripcion": "SECRETARIA GENERAL DEL ESTADO MAYOR GENERAL DE LA ARMADA"
+    },
+    {
+        "id_destino": "SGNA",
+        "descripcion": "SECRETARIA GENERAL DE LA ARMADA"
+    },
+    {
+        "id_destino": "SIAF",
+        "descripcion": "SERVICIO ADMINISTRATIVO FINANCIERO DE LA ARMADA"
+    },
+    {
+        "id_destino": "SIAG",
+        "descripcion": "SERVICIO DE ANALISIS OPERATIVOS, ARMAS Y GUERRA ELECTRONICA"
+    },
+    {
+        "id_destino": "SIAM",
+        "descripcion": "SERVICIO DE SEGURIDAD AMBIENTAL DE LA ARMADA"
+    },
+    {
+        "id_destino": "SIAU",
+        "descripcion": "SERVICIO DE AUDITORIA DE LA ARMADA"
+    },
+    {
+        "id_destino": "SIFR",
+        "descripcion": "FAROS, RADIOFAROS Y PONTONES DEL SERVICIO DE HIDROGRAFIA NAVAL"
+    },
+    {
+        "id_destino": "SIHN",
+        "descripcion": "SERVICIO DE HIDROGRAFIA NAVAL"
+    },
+    {
+        "id_destino": "SIPA",
+        "descripcion": "SERVICIO DE ADMINISTRACION PATRIMONIAL DE LA ARMADA"
+    },
+    {
+        "id_destino": "SISA",
+        "descripcion": "SERVICIO DE SALVAMENTO DE LA ARMADA"
+    },
+    {
+        "id_destino": "SISE",
+        "descripcion": "SERVICIO DE SEGURIDAD AERONAVAL"
+    },
+    {
+        "id_destino": "SISM",
+        "descripcion": "SERVICIO DE BUSQUEDA Y RESCATE MARITIMO, FLUVIAL Y LACUSTRE DE LA ARMADA"
+    },
+    {
+        "id_destino": "SJEM",
+        "descripcion": "SUBJEFATURA DEL ESTADO MAYOR GENERAL DE LA ARMADA"
+    },
+    {
+        "id_destino": "SREM",
+        "descripcion": "SECRETARIA AYUDANTE DEL JEFE DEL ESTADO MAYOR DE LA ARMADA"
+    },
+    {
+        "id_destino": "SUSA",
+        "descripcion": "SUBMARINO A.R.A. SALTA                        S-31"
+    },
+    {
+        "id_destino": "SUSC",
+        "descripcion": "SUBMARINO A.R.A. SANTA CRUZ                   S-41"
+    },
+    {
+        "id_destino": "SUSJ",
+        "descripcion": "SUBMARINO A.R.A. SAN JUAN                     S-42"
+    },
+    {
+        "id_destino": "TBAN",
+        "descripcion": "TRIBUNAL ADMINISTRATIVO DE LA NAVEGACION"
+    },
+    {
+        "id_destino": "THFA",
+        "descripcion": "TRIBUNAL DE HONOR PARA JEFES Y OFICIALES DE LAS FUERZAS ARMADAS"
+    },
+    {
+        "id_destino": "THJO",
+        "descripcion": "TRIBUNAL DE HONOR DE JEFES Y OFICIALES"
+    },
+    {
+        "id_destino": "THSF",
+        "descripcion": "TRIBUNAL SUPERIOR DE HONOR DE LAS FUERZAS ARMADAS"
+    },
+    {
+        "id_destino": "THSU",
+        "descripcion": "TRIBUNAL SUPERIOR DE HONOR DE LA ARMADA"
+    },
+    {
+        "id_destino": "TRCB",
+        "descripcion": "TRANSPORTE A.R.A. CANAL BEAGLE                B-3"
+    },
+    {
+        "id_destino": "TRHE",
+        "descripcion": "TRANSPORTE RAPIDO MULTIPROPOSITO A.R.A. HERCULES   B-52"
+    },
+    {
+        "id_destino": "TRSB",
+        "descripcion": "TRANSPORTE A.R.A. BAHIA SAN BLAS              B-4"
+    },
+    {
+        "id_destino": "TTBA",
+        "descripcion": "TALLER DE MANTENIMIENTO BUENOS AIRES"
+    },
+    {
+        "id_destino": "TVAZ",
+        "descripcion": "TALLER AERONAVAL ALMIRANTE ZAR"
+    },
+    {
+        "id_destino": "TVPI",
+        "descripcion": "TALLER AERONAVAL PUNTA INDIO"
+    },
+    {
+        "id_destino": "VETI",
+        "descripcion": "VELERO ESCUELA A.R.A. TIJUCA          Q-32"
+    },
+    {
+        "id_destino": "VGFA",
+        "descripcion": "VICARIA GENERAL DE LAS FUERZAS ARMADAS"
+    },
+    {
+        "id_destino": "YAF1",
+        "descripcion": "YATE A.R.A. FORTUNA                           Q-74        "
+    },
+    {
+        "id_destino": "YAF2",
+        "descripcion": "YATE A.R.A. FORTUNA II                        Q-75"
+    },
+    {
+        "id_destino": "YAF3",
+        "descripcion": "YATE A.R.A. FORTUNA III                      Q-76"
+    },
+    {
+        "id_destino": "ZNSC",
+        "descripcion": "ZONA NAVAL SANTA CRUZ"
+    }
+]
