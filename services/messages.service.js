@@ -4,7 +4,7 @@ const getMessages = () => {
     const data = {
         message_id: "ahdte5673d",
         message_type: "satelite data",
-        comments: "data example",
+        comments: "data example from satelite modem",
     };
     return data;
 };
