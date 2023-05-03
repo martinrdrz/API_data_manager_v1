@@ -11,7 +11,7 @@ const getMessages = () => {
 
 const procesarNotificacion = async (mensaje) => {
     // Tener en cuenta que en la invocacion a esta funcion, se realizó un "req.body", el cual al tener activado el middleware "express.json()", ya hace una conversion del mensaje que viene en formato  Json y lo pasa automaticamente a Objeto de JavaScript.
-
+    //segundo comentario, solo para hacer un commit
     if (mensaje) {
         console.log("Mensaje con formato Correcto en el Servicio !!");
         try {
