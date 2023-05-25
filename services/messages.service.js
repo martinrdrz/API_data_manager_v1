@@ -2,7 +2,7 @@ const dao = require("../dao/dao");
 
 const getMessages = () => {
     const data = {
-        message_id: "ahdte5673d",
+        message_id: "ahdte5673daa",
         message_type: "satelite data",
         comments: "data example from satelite modem",
     };
