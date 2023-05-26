@@ -1,4 +1,6 @@
 const dao = require("../dao/dao");
+const xml2js = require("xml2js");
+const parser = require("xml-parser");
 
 const getMessages = () => {
     const data = {
@@ -9,23 +11,43 @@ const getMessages = () => {
     return data;
 };
 
-const procesarNotificacion = async (mensaje) => {
-    // Tener en cuenta que en la invocacion a esta funcion, se realizó un "req.body", el cual al tener activado el middleware "express.json()", ya hace una conversion del mensaje que viene en formato  Json y lo pasa automaticamente a Objeto de JavaScript.
-    //segundo comentario, solo para hacer un commit
-    if (mensaje) {
-        console.log("Mensaje con formato Correcto en el Servicio !!");
-        try {
-            const result = await dao.enviarDatos(mensaje);
-            console.log("Mensaje de vuelta de DAO!!");
-            return true; //Arma una promesa de manera automatica con el true y la devuelve.
-        } catch (error) {
-            console.log("Error: Se produjo un error en DAO y lo atrapo en Service");
-            throw error; //Propaga el error, yaque el mismo fue generado endtro de dao.
-        }
-    } else {
-        console.log("Error: Mensaje MAL formateado");
-        return false;
+const createMessage = (messages) => {
+    //console.log("----------------");
+    //console.log(messages);
+    //console.log("----------------");
+    try {
+        let xml = parser(messages);
+        console.log("-------------------------");
+        console.log(xml);
+        console.log("-------------------------");
+        return xml;
+    } catch (error) {
+        console.log("Error al procesar el XML: ", error);
+        throw error;
     }
 };
 
-module.exports = { getMessages };
+const createMessage_Alternativa_1 = (messages) => {
+    //console.log("----------------");
+    //console.log(messages);
+    //console.log("----------------");
+    let data = "Datos del XML";
+    console.log("Primero");
+    xml_parser = new xml2js.Parser();
+    xml_parser.parseString(messages, (err, result) => {
+        if (err) {
+            console.log("Error al leer el XML: ", err);
+            throw err;
+        } else {
+            //console.log("-------------------------");
+            //console.log("result");
+            //console.log("-------------------------");
+            console.log("Segundo");
+            data = result;
+        }
+    });
+    console.log("Tercero");
+    return data;
+};
+
+module.exports = { getMessages, createMessage };

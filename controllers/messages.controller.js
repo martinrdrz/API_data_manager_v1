@@ -8,6 +8,7 @@ const getMessages = (req = request, res = response) => {
     return res.status(200).json(dto.ok("mensajes del modem satelital", data));
 };
 
+/*
 const getMessage = (req = request, res = response) => {
     //Hacer
     const { id } = req.params;
@@ -15,11 +16,24 @@ const getMessage = (req = request, res = response) => {
     let data = service.getMessages();
     return res.status(200).json(dto.ok("mensaje del modem satelital", data));
 };
+*/
 
 const createMessage = (req = request, res = response) => {
     //Hacer
-    let data = service.getMessages();
-    return res.status(200).json(dto.ok("mensaje guardado", data));
+    if (req.is("application/xml")) {
+        console.log("------ ES XML");
+    } else {
+        console.log("------ NO es xml");
+    }
+    try {
+        console.log("Inicial");
+        let data = service.createMessage(req.body);
+        console.log("Cuarto");
+        console.log("----", data);
+        return res.status(200).json(dto.ok("Mensaje procesado exitosamente", data));
+    } catch (error) {
+        return res.status(400).json(dto.error("Error al procesar los mensajes"));
+    }
 };
 
 const updateMessage = (req = request, res = response) => {
@@ -28,4 +42,4 @@ const updateMessage = (req = request, res = response) => {
     return res.status(200).json(dto.ok("mensaje actualizado", data));
 };
 
-module.exports = { getMessages, getMessage, createMessage, updateMessage };
+module.exports = { getMessages, createMessage, updateMessage };
