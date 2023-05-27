@@ -8,7 +8,8 @@ const router = Router();
 
 router.get("/messages", controller.getMessages);
 //router.get("/messages/:id", controller.getMessage);
-router.post("/messages", controller.createMessage);
+router.post("/message", controller.createMessage);
+router.post("/messageFormat", controller.messageFormat);
 //router.put("/message", controller.updateMessage);
 
 module.exports = router;

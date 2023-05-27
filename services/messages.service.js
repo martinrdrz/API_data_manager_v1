@@ -11,15 +11,9 @@ const getMessages = () => {
     return data;
 };
 
-const createMessage = (messages) => {
-    //console.log("----------------");
-    //console.log(messages);
-    //console.log("----------------");
+const messageFormat = (messages) => {
     try {
         let xml = parser(messages);
-        console.log("-------------------------");
-        console.log(xml);
-        console.log("-------------------------");
         return xml;
     } catch (error) {
         console.log("Error al procesar el XML: ", error);
@@ -27,10 +21,45 @@ const createMessage = (messages) => {
     }
 };
 
+const createMessage = (messageXML) => {
+    try {
+        let mensajeJSON = parser(messageXML);
+        let result = procesarMensajeXML(mensajeJSON);
+        return result;
+    } catch (error) {
+        console.log("Error al procesar el XML: ", error);
+        throw error;
+    }
+};
+
+const procesarMensajeXML = (mensajeJSON) => {
+    //hacer
+    if (mensajeJSON.root.attributes.hasOwnProperty("timeStamp")) {
+        console.log("Campo timeStamp exite");
+    }
+    if (mensajeJSON.root.attributes.hasOwnProperty("messageID")) {
+        console.log("Campo messageID exite");
+    }
+    console.log("Cantidad de mensajes: ", mensajeJSON.root.children.length);
+
+    mensajeJSON.root.children.forEach((mensaje, index) => {
+        console.log(`Mensaje Nro: ${index}`);
+        mensaje.children.forEach((field) => {
+            if (field.name == "esn") {
+                console.log(`esn: ${field.content}`);
+            } else if (field.name == "unixTime") {
+                console.log(`unixTime: ${field.content}`);
+            } else if (field.name == "payload") {
+                console.log(`payload.length: ${field.attributes.length}`);
+                console.log(`payload: ${field.content}`);
+            }
+        });
+    });
+
+    return "Resultado del Procesamiento del mensajeXML-JSON";
+};
+
 const createMessage_Alternativa_1 = (messages) => {
-    //console.log("----------------");
-    //console.log(messages);
-    //console.log("----------------");
     let data = "Datos del XML";
     console.log("Primero");
     xml_parser = new xml2js.Parser();
@@ -39,9 +68,6 @@ const createMessage_Alternativa_1 = (messages) => {
             console.log("Error al leer el XML: ", err);
             throw err;
         } else {
-            //console.log("-------------------------");
-            //console.log("result");
-            //console.log("-------------------------");
             console.log("Segundo");
             data = result;
         }
@@ -50,4 +76,4 @@ const createMessage_Alternativa_1 = (messages) => {
     return data;
 };
 
-module.exports = { getMessages, createMessage };
+module.exports = { getMessages, messageFormat, createMessage };
