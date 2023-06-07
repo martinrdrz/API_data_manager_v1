@@ -37,16 +37,28 @@ const messageFormat = (req = request, res = response) => {
 
 const createMessage = (req = request, res = response) => {
     //Hacer
-    // if (req.is("application/xml")) {
+    // if (req.is("text/xml")) {
     //     console.log("------ ES XML");
     // } else {
     //     console.log("------ NO es xml");
     // }
     try {
         let data = service.createMessage(req.body);
-        return res.status(200).json(dto.ok("Mensaje procesado exitosamente", data));
+        //res.header("Content-Type", "application/xml");
+        res.header("Content-Type", "text/xml");
+        res.status(200).send(dto.resultXML(data));
+        //return res.status(200).json(dto.resultXML(data));
     } catch (error) {
-        return res.status(400).json(dto.error("Error al procesar los mensajes"));
+        let data = {
+            timeStamp: service.formatDateI(new Date()),
+            messageID: "0",
+            messageLocalID: "0",
+            dataOK: false,
+        };
+        //res.header("Content-Type", "application/xml");
+        res.header("Content-Type", "text/xml");
+        res.status(400).send(dto.resultXML(data));
+        //return res.status(400).json(dto.resultXML(data));
     }
 };
 

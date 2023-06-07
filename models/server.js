@@ -1,15 +1,12 @@
 const express = require("express");
-//const bodyParser = require("body-parser");
 const cors = require("cors");
 const routes = require("../routes");
-//const {logErrors, errorHandler} = require("../middlewares/mid_error_handlers");
 
 class Server {
     constructor() {
         this.app = express();
         this.port = process.env.PORT || 3000;
         //process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0; //no se verifica los certificados de https
-        //process.env.NODE_ENV = "production";
         this.usuarioPath = "/api/v1";
 
         //Conector a la Base de Datos
@@ -27,9 +24,7 @@ class Server {
 
     middlewares() {
         this.app.use(cors());
-        //this.app.use(bodyParser.text({ type: "application/xml" }));
-        this.app.use(express.text({ type: "application/xml" }));
-        //this.app.use(express.json());
+        this.app.use(express.text({ type: "text/xml" }));
     }
 
     routes() {
