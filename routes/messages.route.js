@@ -6,10 +6,8 @@ const controller = require("../controllers/messages.controller");
 
 const router = Router();
 
-router.get("/messages", controller.getMessages);
-//router.get("/messages/:id", controller.getMessage);
 router.post("/message", controller.createMessage);
-router.post("/messageFormat", controller.messageFormat);
-//router.put("/message", controller.updateMessage);
+//router.get("/messages", controller.getMessages);
+//router.post("/messageFormat", controller.messageFormat);
 
 module.exports = router;
