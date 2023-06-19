@@ -1,16 +1,6 @@
 const dao = require("../dao/dao");
 const xml2js = require("xml2js");
 const parser = require("xml-parser");
-const { v4: uuidv4 } = require("uuid");
-
-const getMessages = () => {
-    const data = {
-        message_id: "ahdte5673daa",
-        message_type: "satelite data",
-        comments: "data example from satelite modem",
-    };
-    return data;
-};
 
 const messageFormat = (messages) => {
     try {
@@ -22,20 +12,10 @@ const messageFormat = (messages) => {
     }
 };
 
-/*-------------------------------------------------------------------------------------------------------
-<?xml version="1.0" encoding="UTF-8"?>
-<stuResponseMsg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuResponse_Rev1_0.xsd"
-deliveryTimeStamp="25/08/2009 21:00:00 GMT" messageID="8675309"
-correlationID="56bdca48088610048fddba385e1cd5b8">
-<state>pass</state>
-<stateMessage>Store OK</stateMessage>
-</stuResponseMsg>
--------------------------------------------------------------------------------------------------------*/
-
 const createMessage = (messageXML) => {
     try {
         let result = procesarMensajeXML(messageXML);
+        //console.log(result);
         return result;
     } catch (error) {
         console.log("Error al procesar el XML: ", error);
@@ -46,27 +26,24 @@ const createMessage = (messageXML) => {
 const procesarMensajeXML = (messageXML) => {
     let mensajeJSON;
     try {
-        //Verifica si hay Error en PasrseXML
+        //Verifica si hay Error en ParseXML
         mensajeJSON = parser(messageXML);
     } catch (error) {
-        console.log("Error: Error al procesar el XML: ", error);
         throw error;
     }
 
     //Verifica si existe atributo "messageID"
     if (!mensajeJSON.root.attributes.hasOwnProperty("messageID")) {
-        console.log("Error: No existe la propiedad MessageID");
         throw new Error("No existe la propiedad MessageID");
     }
 
     //Verifica si el mensaje es vacio
     if (mensajeJSON.root.children.length == 0) {
-        console.log("Mensaje Vacio");
         let result = {
             correlationID: mensajeJSON.root.attributes.messageID,
             deliveryTimeStamp: formatDate(new Date()),
             state: "pass",
-            stateMessage: "message not store, empty message",
+            stateMessage: "Message not store, empty message",
         };
         return result;
     }
@@ -78,6 +55,7 @@ const procesarMensajeXML = (messageXML) => {
             deliveryTimeStamp: formatDate(new Date()),
             state: "pass",
             stateMessage: "Store OK",
+            messages: mensajeJSON.root.children,
         };
         return result;
     } else {
@@ -86,88 +64,37 @@ const procesarMensajeXML = (messageXML) => {
             correlationID: mensajeJSON.root.attributes.messageID,
             deliveryTimeStamp: formatDate(new Date()),
             state: "fail",
-            stateMessage: "messages with error",
+            stateMessage: "Messages with errors",
         };
         return result;
     }
 };
 
 const dataFormatOK = (mensajeJSON) => {
-    let messageOK = {
-        esn: false,
-        unixTime: false,
-        payload: false,
-    };
+    let message = {};
+    let messageOK = true;
     mensajeJSON.root.children.forEach((stuMessage, index) => {
-        console.log(`Mensaje Nro: ${index}`);
+        message.esn = false;
+        message.unixTime = false;
+        message.payload = false;
         stuMessage.children.forEach((field) => {
             if (field.name == "esn" && field.content != "") {
-                messageOK.esn = true;
+                message.esn = true;
             } else if (field.name == "unixTime" && field.content != "") {
-                messageOK.unixTime = true;
+                message.unixTime = true;
             } else if (field.name == "payload" && field.content != "" && field.attributes.length != "") {
-                messageOK.payload = true;
+                if (parseInt(field.attributes.length) * 2 == field.content.length - 2) {
+                    message.payload = true;
+                } else {
+                    message.payload = false;
+                }
             }
         });
-        if (!(messageOK.esn && messageOK.unixTime && messageOK.payload)) {
-            return false;
+        if (!(message.esn && message.unixTime && message.payload)) {
+            messageOK = false;
         }
     });
-    return true;
-};
-
-const createMessage_1 = (messageXML) => {
-    try {
-        let mensajeJSON = parser(messageXML);
-        let result = procesarMensajeXML(mensajeJSON);
-        return result;
-    } catch (error) {
-        console.log("Error al procesar el XML: ", error);
-        throw error;
-    }
-};
-
-const procesarMensajeXML_1 = (mensajeJSON) => {
-    //hacer
-    let dataOK = true;
-    let result = {};
-    if (mensajeJSON.root.attributes.hasOwnProperty("timeStamp")) {
-        //console.log("Campo timeStamp exite");
-        console.log(`Campo timeStamp exite: ${mensajeJSON.root.attributes.timeStamp}`);
-        result.timeStamp = formatDate(new Date());
-    } else {
-        dataOK = false;
-    }
-    if (dataOK && mensajeJSON.root.attributes.hasOwnProperty("messageID")) {
-        console.log(`Campo messageID exite: ${mensajeJSON.root.attributes.messageID}`);
-        result.messageID = mensajeJSON.root.attributes.messageID;
-    } else {
-        dataOK = false;
-    }
-    console.log("Cantidad de mensajes: ", mensajeJSON.root.children.length);
-
-    mensajeJSON.root.children.forEach((mensaje, index) => {
-        console.log(`Mensaje Nro: ${index}`);
-        mensaje.children.forEach((field) => {
-            if (field.name == "esn") {
-                console.log(`esn: ${field.content}`);
-            } else if (field.name == "unixTime") {
-                console.log(`unixTime: ${field.content}`);
-            } else if (field.name == "payload") {
-                console.log(`payload.length: ${field.attributes.length}`);
-                console.log(`payload: ${field.content}`);
-            }
-        });
-    });
-    result.dataOK = dataOK;
-    result.messageLocalID = uuidv4().replace(/-/g, "");
-    return result;
-    /* formato de result
-        result.messageID
-        result.timeStamp
-        result.dataOK
-        result.messageLocalID
-    */
+    return messageOK;
 };
 
 function formatDate(date) {
@@ -181,4 +108,4 @@ function formatDate(date) {
     return `${day}/${month}/${year} ${hours}:${minutes}:${seconds} GMT`;
 }
 
-module.exports = { getMessages, messageFormat, createMessage, formatDate };
+module.exports = { messageFormat, createMessage };
