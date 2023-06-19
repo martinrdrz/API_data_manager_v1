@@ -35,6 +35,89 @@ correlationID="56bdca48088610048fddba385e1cd5b8">
 
 const createMessage = (messageXML) => {
     try {
+        let result = procesarMensajeXML(messageXML);
+        return result;
+    } catch (error) {
+        console.log("Error al procesar el XML: ", error);
+        throw error;
+    }
+};
+
+const procesarMensajeXML = (messageXML) => {
+    let mensajeJSON;
+    try {
+        //Verifica si hay Error en PasrseXML
+        mensajeJSON = parser(messageXML);
+    } catch (error) {
+        console.log("Error: Error al procesar el XML: ", error);
+        throw error;
+    }
+
+    //Verifica si existe atributo "messageID"
+    if (!mensajeJSON.root.attributes.hasOwnProperty("messageID")) {
+        console.log("Error: No existe la propiedad MessageID");
+        throw new Error("No existe la propiedad MessageID");
+    }
+
+    //Verifica si el mensaje es vacio
+    if (mensajeJSON.root.children.length == 0) {
+        console.log("Mensaje Vacio");
+        let result = {
+            correlationID: mensajeJSON.root.attributes.messageID,
+            deliveryTimeStamp: formatDate(new Date()),
+            state: "pass",
+            stateMessage: "message not store, empty message",
+        };
+        return result;
+    }
+
+    //Verifica si los datos estan OK
+    if (dataFormatOK(mensajeJSON)) {
+        let result = {
+            correlationID: mensajeJSON.root.attributes.messageID,
+            deliveryTimeStamp: formatDate(new Date()),
+            state: "pass",
+            stateMessage: "Store OK",
+        };
+        return result;
+    } else {
+        //Si hay error en alguno de los mensajes
+        let result = {
+            correlationID: mensajeJSON.root.attributes.messageID,
+            deliveryTimeStamp: formatDate(new Date()),
+            state: "fail",
+            stateMessage: "messages with error",
+        };
+        return result;
+    }
+};
+
+const dataFormatOK = (mensajeJSON) => {
+    let messageOK = {
+        esn: false,
+        unixTime: false,
+        payload: false,
+    };
+    mensajeJSON.root.children.forEach((stuMessage, index) => {
+        console.log(`Mensaje Nro: ${index}`);
+        stuMessage.children.forEach((field) => {
+            if (field.name == "esn" && field.content != "") {
+                messageOK.esn = true;
+            } else if (field.name == "unixTime" && field.content != "") {
+                messageOK.unixTime = true;
+            } else if (field.name == "payload" && field.content != "" && field.attributes.length != "") {
+                messageOK.payload = true;
+            }
+        });
+        if (!(messageOK.esn && messageOK.unixTime && messageOK.payload)) {
+            return false;
+        }
+    });
+    return true;
+};
+
+const createMessage_1 = (messageXML) => {
+    try {
         let mensajeJSON = parser(messageXML);
         let result = procesarMensajeXML(mensajeJSON);
         return result;
@@ -44,7 +127,7 @@ const createMessage = (messageXML) => {
     }
 };
 
-const procesarMensajeXML = (mensajeJSON) => {
+const procesarMensajeXML_1 = (mensajeJSON) => {
     //hacer
     let dataOK = true;
     let result = {};
@@ -97,22 +180,5 @@ function formatDate(date) {
 
     return `${day}/${month}/${year} ${hours}:${minutes}:${seconds} GMT`;
 }
-
-const createMessage_Alternativa_1 = (messages) => {
-    let data = "Datos del XML";
-    console.log("Primero");
-    xml_parser = new xml2js.Parser();
-    xml_parser.parseString(messages, (err, result) => {
-        if (err) {
-            console.log("Error al leer el XML: ", err);
-            throw err;
-        } else {
-            console.log("Segundo");
-            data = result;
-        }
-    });
-    console.log("Tercero");
-    return data;
-};
 
 module.exports = { getMessages, messageFormat, createMessage, formatDate };
