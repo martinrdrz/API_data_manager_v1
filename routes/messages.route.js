@@ -7,6 +7,6 @@ const controller = require("../controllers/messages.controller");
 const router = Router();
 
 router.post("/message", controller.createMessage);
-router.post("/messageFormat", controller.messageFormat);
+//router.post("/messageFormat", controller.messageFormat);
 
 module.exports = router;

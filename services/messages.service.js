@@ -18,7 +18,6 @@ const createMessage = (messageXML) => {
         //console.log(result);
         return result;
     } catch (error) {
-        console.log("Error al procesar el XML: ", error);
         throw error;
     }
 };

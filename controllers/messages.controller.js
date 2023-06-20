@@ -9,7 +9,7 @@ const createMessage = (req = request, res = response) => {
         res.status(200).send(dto.resultXML(result));
     } catch (error) {
         res.header("Content-Type", "text/xml");
-        res.sendStatus(500);
+        res.end();
     }
 };
 
