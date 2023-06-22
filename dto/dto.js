@@ -24,4 +24,6 @@ const ok = (message = "", data = {}) => ({
 
 module.exports = {
     resultXML,
+    ok,
+    error,
 };
