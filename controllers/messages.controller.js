@@ -8,8 +8,9 @@ const createMessage = (req = request, res = response) => {
         res.header("Content-Type", "text/xml");
         res.status(200).send(dto.resultXML(result));
     } catch (error) {
-        res.header("Content-Type", "text/xml");
-        res.end();
+        //No se contesta y se deja la conexion abierta para que BOF comience a enviar mensajes Vacios
+        //res.header("Content-Type", "text/xml");
+        //res.end();
     }
 };
 
