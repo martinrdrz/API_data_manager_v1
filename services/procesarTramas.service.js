@@ -1,0 +1,1 @@
+//Lee dos datos de Firebase para saber como analizar las tramas que vienen en los datos de entrada, se arma un objeto con la informacion necesaria para saber donde almacenar dicha informacion y los datos propieamente dichos y se devuelve.
