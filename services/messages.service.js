@@ -2,16 +2,6 @@ const dao = require("../dao/dao");
 const xml2js = require("xml2js");
 const parser = require("xml-parser");
 
-const messageFormat = (messages) => {
-    try {
-        let xml = parser(messages);
-        return xml;
-    } catch (error) {
-        console.log("Error al procesar el XML: ", error);
-        throw error;
-    }
-};
-
 const createMessage = (messageXML) => {
     try {
         let result = procesarMensajeXML(messageXML);
@@ -126,4 +116,4 @@ function formatDate(date) {
     return `${day}/${month}/${year} ${hours}:${minutes}:${seconds} GMT`;
 }
 
-module.exports = { messageFormat, createMessage };
+module.exports = { createMessage };
