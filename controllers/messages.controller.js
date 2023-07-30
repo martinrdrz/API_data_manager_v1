@@ -8,6 +8,7 @@ const createMessage = (req = request, res = response) => {
         let result = service.createMessage(req.body);
         res.header("Content-Type", "text/xml");
         res.status(200).send(dto.resultXML(result));
+        service.visualizarDatoMensaje(result);
         let datos = service.procesarTramas(result);
         let result_2 = service.almacenarDatos(datos);
         //AlmacenarDatosEntrada(datos)

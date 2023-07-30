@@ -12,6 +12,23 @@ const createMessage = (messageXML) => {
     }
 };
 
+const decirHola = (dato) => {
+    console.log(`Hola ${dato.messages} desde la funcion`);
+};
+
+const visualizarDatoMensaje = (mensaje) => {
+    console.log(`Cantidad mensajes recibidos: ${mensaje.messages.length}`);
+    console.log(`Datos  del priemer mensaje recibido:`);
+    mensaje.messages[0].children.forEach((element) => {
+        if (element.name == "payload") {
+            console.log(`${element.name} : ${element.attributes.length} : ${element.content}`);
+        } else {
+            console.log(`${element.name} : ${element.content}`);
+        }
+    });
+    console.log("");
+};
+
 const procesarMensajeXML = (messageXML) => {
     let mensajeJSON;
     try {
@@ -116,4 +133,4 @@ function formatDate(date) {
     return `${day}/${month}/${year} ${hours}:${minutes}:${seconds} GMT`;
 }
 
-module.exports = { createMessage };
+module.exports = { createMessage, visualizarDatoMensaje, decirHola };
