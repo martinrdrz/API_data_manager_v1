@@ -1,5 +1,4 @@
 const { response, request } = require("express");
-//const service = require("../services/messages.service");
 const service = require("../services");
 const dto = require("../dto/dto");
 
@@ -23,8 +22,9 @@ const satMessage = (req = request, res = response) => {
 const gsmMessage = (req = request, res = response) => {
     try {
         if (req.is("json")) {
-            //console.log(req.body);
-            service.visualizarDatoMensajeGsm(req.body);
+            let mensaje = req.body;
+            service.verificarMensajeGsm(mensaje);
+            service.visualizarDatoMensajeGsm(mensaje);
             res.status(200).json(dto.ok("data OK."));
         } else {
             console.log("Error de formato");

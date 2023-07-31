@@ -1,6 +1,6 @@
 //Lee los datos de Firebase para saber como analizar cada uno de los mensajes que vienen en la trama de entrada, se arma un objeto con la informacion necesaria para saber donde almacenar dicha informacion y los datos propieamente dichos y se devuelve.
 
-const procesarTramas = (datos) => [
+const procesarTramaMensaje = (datos) => [
     //TO DO
     //Leer dase de datos de dispositivos
     //Por cada Trama en "datos", separar los distintos mensajes que vienen
@@ -8,4 +8,4 @@ const procesarTramas = (datos) => [
     //devolver una estructura con la informacion anterior para que pueda ser almacenada
 ];
 
-module.exports = { procesarTramas };
+module.exports = { procesarTramaMensaje };

@@ -1,8 +1,5 @@
-const dao = require("../dao/dao");
 const xml2js = require("xml2js");
 const parser = require("xml-parser");
-
-let nro_mensaje = 0;
 
 const satMessage = (messageXML) => {
     try {
@@ -25,12 +22,6 @@ const visualizarDatoMensajeSat = (mensaje) => {
         }
     });
     console.log("");
-};
-
-const visualizarDatoMensajeGsm = (mensaje) => {
-    nro_mensaje++;
-    console.log(`Mensaje ${nro_mensaje} recibido:`);
-    console.log(mensaje);
 };
 
 const procesarMensajeXML = (messageXML) => {
@@ -140,4 +131,4 @@ function formatDate(date) {
     return `${day}/${month}/${year} ${hours}:${minutes}:${seconds} GMT`;
 }
 
-module.exports = { satMessage, visualizarDatoMensajeSat, visualizarDatoMensajeGsm };
+module.exports = { satMessage, visualizarDatoMensajeSat };
