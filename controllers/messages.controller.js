@@ -31,6 +31,8 @@ const gsmMessage = (req = request, res = response) => {
             res.status(200).json(dto.error("Error de formato"));
         }
     } catch (error) {
+        console.log("");
+        console.log("Error formato mensaje");
         return res.status(400).json(dto.error(error.message));
     }
 };

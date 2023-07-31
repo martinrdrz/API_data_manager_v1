@@ -17,6 +17,7 @@ const verificarMensajeGsm = (mensaje) => {
 
 const visualizarDatoMensajeGsm = (mensaje) => {
     nro_mensaje++;
+    console.log("");
     console.log(`Mensaje ${nro_mensaje} recibido:`);
     console.log(mensaje);
 };
