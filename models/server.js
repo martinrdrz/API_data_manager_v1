@@ -25,6 +25,7 @@ class Server {
     middlewares() {
         this.app.use(cors());
         this.app.use(express.text({ type: "text/xml" }));
+        this.app.use(express.json());
     }
 
     routes() {

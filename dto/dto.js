@@ -16,10 +16,9 @@ const error = (message) => ({
     message: message,
 });
 
-const ok = (message = "", data = {}) => ({
+const ok = (message = "") => ({
     response: "OK",
     message: message,
-    data: data,
 });
 
 module.exports = {

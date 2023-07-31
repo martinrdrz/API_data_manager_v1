@@ -2,7 +2,9 @@ const dao = require("../dao/dao");
 const xml2js = require("xml2js");
 const parser = require("xml-parser");
 
-const createMessage = (messageXML) => {
+let nro_mensaje = 0;
+
+const satMessage = (messageXML) => {
     try {
         let result = procesarMensajeXML(messageXML);
         //console.log(result);
@@ -12,11 +14,7 @@ const createMessage = (messageXML) => {
     }
 };
 
-const decirHola = (dato) => {
-    console.log(`Hola ${dato.messages} desde la funcion`);
-};
-
-const visualizarDatoMensaje = (mensaje) => {
+const visualizarDatoMensajeSat = (mensaje) => {
     console.log(`Cantidad mensajes recibidos: ${mensaje.messages.length}`);
     console.log(`Datos  del priemer mensaje recibido:`);
     mensaje.messages[0].children.forEach((element) => {
@@ -27,6 +25,12 @@ const visualizarDatoMensaje = (mensaje) => {
         }
     });
     console.log("");
+};
+
+const visualizarDatoMensajeGsm = (mensaje) => {
+    nro_mensaje++;
+    console.log(`Mensaje ${nro_mensaje} recibido:`);
+    console.log(mensaje);
 };
 
 const procesarMensajeXML = (messageXML) => {
@@ -56,6 +60,7 @@ const procesarMensajeXML = (messageXML) => {
             deliveryTimeStamp: formatDate(new Date()),
             state: "pass",
             stateMessage: "Message not store, empty message",
+            flag_pass_ok: false,
         };
         console.log("Info: Mensaje Vacio at ", result.deliveryTimeStamp);
         return result;
@@ -69,6 +74,7 @@ const procesarMensajeXML = (messageXML) => {
             state: "pass",
             stateMessage: "Store OK",
             messages: mensajeJSON.root.children,
+            flag_pass_ok: true,
         };
         console.log("Info: Mensaje OK at ", result.deliveryTimeStamp);
         return result;
@@ -76,20 +82,21 @@ const procesarMensajeXML = (messageXML) => {
         //Si hay error en alguno de los mensajes
 
         //Habilitar este resultado en caso Normal.
-        // let result = {
-        //     correlationID: mensajeJSON.root.attributes.messageID,
-        //     deliveryTimeStamp: formatDate(new Date()),
-        //     state: "fail",
-        //     stateMessage: "Messages with errors",
-        // };
-
-        //Habilitar este resultado en caso de Certificacion
         let result = {
             correlationID: mensajeJSON.root.attributes.messageID,
             deliveryTimeStamp: formatDate(new Date()),
-            state: "pass",
-            stateMessage: "Store OK",
+            state: "fail",
+            stateMessage: "Messages with errors",
+            flag_pass_ok: false,
         };
+
+        //Habilitar este resultado en caso de Certificacion
+        // let result = {
+        //     correlationID: mensajeJSON.root.attributes.messageID,
+        //     deliveryTimeStamp: formatDate(new Date()),
+        //     state: "pass",
+        //     stateMessage: "Store OK",
+        // };
         console.log("Info: Mensaje with Error at ", result.deliveryTimeStamp);
         return result;
     }
@@ -133,4 +140,4 @@ function formatDate(date) {
     return `${day}/${month}/${year} ${hours}:${minutes}:${seconds} GMT`;
 }
 
-module.exports = { createMessage, visualizarDatoMensaje, decirHola };
+module.exports = { satMessage, visualizarDatoMensajeSat, visualizarDatoMensajeGsm };

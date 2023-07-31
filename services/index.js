@@ -1,5 +1,5 @@
-const { createMessage, decirHola, visualizarDatoMensaje } = require("./messages.service");
+const { satMessage, visualizarDatoMensajeSat, visualizarDatoMensajeGsm } = require("./messages.service");
 const { procesarTramas } = require("./procesarTramas.service");
 const { almacenarDatos } = require("./almacenarDatos.service");
 
-module.exports = { createMessage, decirHola, visualizarDatoMensaje, procesarTramas, almacenarDatos };
+module.exports = { satMessage, visualizarDatoMensajeSat, visualizarDatoMensajeGsm, procesarTramas, almacenarDatos };

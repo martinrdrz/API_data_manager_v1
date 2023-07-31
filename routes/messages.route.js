@@ -6,7 +6,7 @@ const controller = require("../controllers/messages.controller");
 
 const router = Router();
 
-router.post("/message", controller.createMessage);
-//router.post("/messageFormat", controller.messageFormat);
+router.post("/message", controller.satMessage);
+router.post("/gsmmessage", controller.gsmMessage);
 
 module.exports = router;
