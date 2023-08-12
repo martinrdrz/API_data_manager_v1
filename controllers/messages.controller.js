@@ -37,4 +37,17 @@ const gsmMessage = (req = request, res = response) => {
     }
 };
 
-module.exports = { satMessage, gsmMessage };
+const ggsmMessage = (req = request, res = response) => {
+    let mensaje = req.query;
+    try {
+        service.verificarMensajeGsm(mensaje);
+        service.visualizarDatoMensajeGsm(mensaje);
+        res.status(200).send("OK");
+    } catch (error) {
+        console.log("");
+        console.log("ERROR");
+        return res.status(400).send("ERROR");
+    }
+};
+
+module.exports = { satMessage, gsmMessage, ggsmMessage };
