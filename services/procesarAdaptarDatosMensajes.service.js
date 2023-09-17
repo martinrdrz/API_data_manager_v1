@@ -8,7 +8,7 @@ const procesarAdaptarDatosMensajeSat = (datos) => [
     //devolver una estructura con la informacion anterior para que pueda ser almacenada
 ];
 
-const ArmarArregloPorTramas = (dato) => {
+const ArmarArregloPorTrama = (dato) => {
     //TO DO
 };
 
