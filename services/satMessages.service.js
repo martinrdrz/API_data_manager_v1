@@ -12,7 +12,6 @@ const satMessage = (messageXML) => {
 };
 
 const visualizarDatoMensajeSat = (mensaje) => {
-    console.log("");
     console.log(`Cantidad mensajes recibidos: ${mensaje.messages.length}`);
     console.log(`Datos  del priemer mensaje recibido:`);
     mensaje.messages[0].children.forEach((element) => {
@@ -22,12 +21,14 @@ const visualizarDatoMensajeSat = (mensaje) => {
             console.log(`${element.name} : ${element.content}`);
         }
     });
+    console.log("");
 };
 
 const procesarMensajeXML = (messageXML) => {
     let mensajeJSON;
     try {
-        //Verifica si hay Error en ParseXML
+        //Parser devuelve un Json del xml de entrada
+        //Permite verificar si hay Error en ParseXML
         mensajeJSON = parser(messageXML);
         if (mensajeJSON.declaration == undefined) {
             //Verifica si el XML tiene error en la declaracion del encabezado

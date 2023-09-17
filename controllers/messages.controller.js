@@ -9,9 +9,9 @@ const satMessage = (req = request, res = response) => {
         res.status(200).send(dto.resultXML(result));
         service.visualizarDatoMensajeSat(result);
         //verificar si se recibe un mensaje vacio, en tal caso no hay que procesarlo
-        let datos = service.procesarTramas(result);
-        let result_2 = service.almacenarDatos(datos);
+        let datos = service.procesarAdaptarDatosMensajeSat(result);
         //AlmacenarDatosEntrada(datos)
+        let result_2 = service.almacenarDatos(datos);
     } catch (error) {
         //No se contesta y se deja la conexion abierta para que BOF comience a enviar mensajes Vacios
         //res.header("Content-Type", "text/xml");
@@ -28,7 +28,7 @@ const gsmMessage = (req = request, res = response) => {
             res.status(200).json(dto.ok("data OK."));
         } else {
             console.log("Error de formato");
-            res.status(200).json(dto.error("Error de formato"));
+            res.status(400).json(dto.error("Error de formato"));
         }
     } catch (error) {
         console.log("");
