@@ -28,7 +28,7 @@ const procesarMensajeXML = (messageXML) => {
     let mensajeJSON;
     try {
         //Parser devuelve un Json del xml de entrada
-        //Permite verificar si hay Error en ParseXML
+        //Permite verificar si hay Error en ParseXML del mensaje
         mensajeJSON = parser(messageXML);
         if (mensajeJSON.declaration == undefined) {
             //Verifica si el XML tiene error en la declaracion del encabezado
