@@ -1,0 +1,11 @@
+const { db } = require("./databaseConexion.dao");
+
+const getConfigDispositivos = () => {
+    const ref = db.ref("dispositivos");
+    ref.once("value", (snapshot) => {
+        const data = snapshot.val();
+        console.log(data);
+    });
+};
+
+module.exports = { getConfigDispositivos };
