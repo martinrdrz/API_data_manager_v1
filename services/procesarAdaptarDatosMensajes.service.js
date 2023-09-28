@@ -9,8 +9,8 @@ const procesarAdaptarDatosMensajeSat = async (datosCompletos) => {
   //Luego de la estructura anterior, Array_A, armar una estructura Array_B dnde cada objeto json representa un mensaje por cada sistema de un usuario. Recordar que la trma orginal que viene del modem contiene informacion de todos los sistemas que este modem cubra, y en esta estructura Array_B, la idea es que cada objeto solo mantiene la información de cada sistema.
   //ArmarArregloDatosPorCanalThingspeak
   //Luego, a partir de la estructura Array_B, generar una nueva estructura donde cada objeto json contiene la informacion de la Api_Key y sus datos del 1 al 8, que se deben guardar en Thingspeak por medio de una sola operacion de escritura.
-  arrayMensajePorModem = ArmarArregloPorTrama(datosCompletos.messages);
-  console.log(arrayMensajePorModem);
+  let arrayMensajes = ArmarArregloPorTramaSat(datosCompletos.messages);
+  console.log(arrayMensajes);
 
   try {
     const datos = await dao.getConfigDispositivos();
@@ -37,7 +37,7 @@ const procesarAdaptarDatosMensajeSat = async (datosCompletos) => {
   //arrayDatosPorCanalTinhgspeak = ArmarArregloDatosPorCanalThingspeak(arrayMensajePorSistema);
 };
 
-const ArmarArregloPorTrama = (messages) => {
+const ArmarArregloPorTramaSat = (messages) => {
   let arrayResult = [];
   messages.forEach((message) => {
     let objResult = {};
@@ -45,8 +45,9 @@ const ArmarArregloPorTrama = (messages) => {
       if (item.name == "esn") {
         objResult.deviceID = item.content;
       } else if (item.name == "payload") {
+        //llamar funcion conversion de Hexa del payload a string de numeros decimales y almacenar esa infromacion en objResult.length y objResult.payload
         objResult.length = item.attributes.length;
-        objResult.payload = item.content;
+        objResult.payload = item.content.slice(2);
       }
     });
     arrayResult.push(objResult);
