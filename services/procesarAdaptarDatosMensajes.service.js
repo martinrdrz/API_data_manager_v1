@@ -1,5 +1,6 @@
 //Lee los datos de Firebase para saber como analizar cada uno de los mensajes que vienen en la trama de entrada, se arma un objeto con la informacion necesaria para saber donde almacenar dicha informacion y los datos propiamente dichos y se devuelve.
 const dao = require("../dao/dao");
+const DATOS_POR_CANAL_THINGSPEAK = 8;
 
 const procesarAdaptarDatosMensajeSat = async (datosCompletos) => {
   //TO DO
@@ -27,7 +28,7 @@ const procesarAdaptarDatosMensajeSat = async (datosCompletos) => {
 
   const arrayMensajesPorSistema = ArmarArregloMensajesPorSistema(arrayMensajesPorModem, datosConfig);
 
-  const arrayDatosPorCanalTinhgspeak = ArmarArregloDatosPorCanalThingspeak(arrayMensajesPorSistema);
+  const arrayDatosPorCanalTinhgspeak = ArmarArregloDatosPorCanalThingspeak(arrayMensajesPorSistema, datosConfig);
   return arrayDatosPorCanalTinhgspeak;
 };
 
@@ -76,10 +77,6 @@ const ArmarArregloMensajesPorSistema = (arrayMensajesPorModem, datosConfig) => {
   return arrayTodosMensajesPorSistema;
 };
 
-//cliclar por cada mensajes
-//en cada mensaje leer la cantidad de bits totales para ese mensaje
-//armar nuevo mensaje con los datos y bits en formato string para ese mensaje
-//continuar co el siguiente mensaje
 const convertirMensajePorModemEnSistemas = (mensajePorModem, datosConfigDevice) => {
   //Dato de entrada: mensajePorModem:
   //{ deviceID: '0-99990', length: '9', payload: 'C0560D72DA4AB2445A' }
@@ -112,8 +109,56 @@ const convertirMensajePorModemEnSistemas = (mensajePorModem, datosConfigDevice) 
   return mensajesPorSistema;
 };
 
-const ArmarArregloDatosPorCanalThingspeak = (arrayMensajePorSistema) => {
-  //TO DO
+const ArmarArregloDatosPorCanalThingspeak = (arrayMensajePorSistema, datosConfig) => {
+  //dato entrada: arrayMensajePorSistema
+  /*[
+    {
+      deviceID: "0-99990",
+      mensaje_nro: "mensaje_1",
+      payload: "01111000100010011001",
+    },
+    {
+      deviceID: "0-99990",
+      mensaje_nro: "mensaje_2",
+      payload: "001100111",
+    },
+  ]*/
+  //Salida de la funcion: De acuerdo al formato que espera Thingspeak.
+  /*[
+    {
+      api_key: "aaaaaa",
+      field1: 10,
+      field2: 20,
+      field3: 30,
+    }
+  ]*/
+  let arrayMensajesThingspeak = [];
+  for (const mensajeSistema of arrayMensajePorSistema) {
+    let datosConfigMensaje = datosConfig[mensajeSistema.deviceID][mensajeSistema.mensaje_nro];
+    for (let indexCanal = 1; indexCanal <= datosConfigMensaje["cant_canales_asignados"]; indexCanal++) {
+      let totalDatosEnCanal = DATOS_POR_CANAL_THINGSPEAK;
+      if (indexCanal == datosConfigMensaje["cant_canales_asignados"]) {
+        //Me da cantidad de datos a leer para el ultimo canal, ya que puede estar no completo.
+        totalDatosEnCanal = datosConfigMensaje["cant_datos"] % DATOS_POR_CANAL_THINGSPEAK;
+      }
+
+      let mensajeThingspeak = { api_key: datosConfigMensaje[`writeAPIkey_${indexCanal}`] };
+      let inicioIndexLeerBits = 1;
+      let indexDatoConfig = 0;
+      for (let indexDatoEnCanal = 1; indexDatoEnCanal <= totalDatosEnCanal; indexDatoEnCanal++) {
+        indexDatoConfig = (indexCanal - 1) * DATOS_POR_CANAL_THINGSPEAK + indexDatoEnCanal;
+        const cadenaBits = mensajeSistema.payload;
+        const cantBitsLeer = datosConfigMensaje[`bits_dato_${indexDatoConfig}`];
+        const datoValor = convertirBitsANumero(cadenaBits, inicioIndexLeerBits, cantBitsLeer);
+        inicioIndexLeerBits += cantBitsLeer;
+        mensajeThingspeak[`field${indexDatoEnCanal}`] = datoValor;
+      }
+      arrayMensajesThingspeak.push(mensajeThingspeak);
+    }
+  }
+  console.log("------------------------");
+  console.log(arrayMensajesThingspeak);
+  return arrayMensajesThingspeak;
 };
 
 const convertirHexaABits = (cadenaHexa) => {
@@ -124,6 +169,16 @@ const convertirHexaABits = (cadenaHexa) => {
     cadenaBits += binaryChar;
   }
   return cadenaBits;
+};
+
+const convertirBitsANumero = (binaryString, startIndexFromEnd, length) => {
+  // Calcula el índice de inicio desde el final del string
+  const startIndex = binaryString.length - (startIndexFromEnd - 1) - length;
+  // Extrae la subcadena basada en el índice de inicio y la longitud dada
+  const subString = binaryString.slice(startIndex, startIndex + length);
+  // Convierte la subcadena binaria a un número entero
+  const intValue = parseInt(subString, 2);
+  return intValue;
 };
 
 module.exports = { procesarAdaptarDatosMensajeSat };
