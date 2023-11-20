@@ -1,10 +1,10 @@
 const xml2js = require("xml2js");
 const parser = require("xml-parser");
+const { formatDate } = require("../helpers/formato.helper");
 
 const satMessage = (messageXML) => {
     try {
         let result = procesarMensajeXML(messageXML);
-        //console.log(result);
         return result;
     } catch (error) {
         throw error;
@@ -120,16 +120,5 @@ const dataFormatOK = (mensajeJSON) => {
     });
     return messageOK;
 };
-
-function formatDate(date) {
-    const day = String(date.getUTCDate()).padStart(2, "0");
-    const month = String(date.getUTCMonth() + 1).padStart(2, "0");
-    const year = date.getUTCFullYear();
-    const hours = String(date.getUTCHours()).padStart(2, "0");
-    const minutes = String(date.getUTCMinutes()).padStart(2, "0");
-    const seconds = String(date.getUTCSeconds()).padStart(2, "0");
-
-    return `${day}/${month}/${year} ${hours}:${minutes}:${seconds} GMT`;
-}
 
 module.exports = { satMessage, visualizarDatoMensajeSat };

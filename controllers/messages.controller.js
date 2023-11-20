@@ -11,13 +11,17 @@ const satMessage = async (req = request, res = response) => {
     } catch (error) {
         //No se contesta y se deja la conexion abierta para que BOF comience a enviar mensajes Vacios
     }
+
     try {
         service.visualizarDatoMensajeSat(resultMensajesOriginales);
         //verificar si se recibe un mensaje vacio, en tal caso no hay que procesarlo
-        let mensajesFormateados = await service.procesarAdaptarDatosMensajeSat(resultMensajesOriginales, "SAT");
-        let resultMensajesAlmacenados = await service.almacenarDatos(mensajesFormateados);
-        console.log("-----------------");
-        console.log(resultMensajesAlmacenados);
+        if (resultMensajesOriginales.messages && resultMensajesOriginales.messages.length) {
+            let mensajesFormateados = await service.procesarAdaptarDatosMensaje(resultMensajesOriginales, "SAT");
+            let resultMensajesAlmacenados = await service.almacenarDatos(mensajesFormateados);
+            console.log("Indices mensajes almacenados thingspeak: " + resultMensajesAlmacenados);
+        } else {
+            console.log("Mensajes satelitales vacios.");
+        }
     } catch (error) {
         console.log(error.message);
     }
@@ -29,14 +33,12 @@ const gsmMessage = async (req = request, res = response) => {
         service.verificarMensajeGsm(mensaje);
         service.visualizarDatoMensajeGsm(mensaje);
         //const arrayMensajeOriginal = [mensaje];
-        let mensajesFormateados = await service.procesarAdaptarDatosMensajeSat(mensaje, "GSM");
+        let mensajesFormateados = await service.procesarAdaptarDatosMensaje(mensaje, "GSM");
         let resultMensajesAlmacenados = await service.almacenarDatos(mensajesFormateados);
-        console.log("-----------------");
-        console.log(resultMensajesAlmacenados);
+        console.log("Indices mensajes almacenados thingspeak: " + resultMensajesAlmacenados);
         res.status(200).send("OK");
     } catch (error) {
-        console.log("");
-        console.log("ERROR");
+        console.log("Error: Error al procesar mensaje GSM");
         return res.status(400).send("ERROR");
     }
 };

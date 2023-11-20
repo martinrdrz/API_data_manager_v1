@@ -2,7 +2,7 @@
 const dao = require("../dao/dao");
 const DATOS_POR_CANAL_THINGSPEAK = 8;
 
-const procesarAdaptarDatosMensajeSat = async (datosMensajesDeModem, modemTipo) => {
+const procesarAdaptarDatosMensaje = async (datosMensajesDeModem, modemTipo) => {
     //TO DO
     //Funcion: ArmarArregloPorTrama
     //Arma una estructura Array_A con un objeto json por cada mensaje que viene en el mensaje transmitido por la estacion terrestre. Recordar que por cada mensaje transmitido por la estacion terrestre puede haber varios mensajes de distintos modulos satelitales dentro. Cada objeto json es este caso, mantiene la informacion de cada modulo satelital, lo que cada trama contiene es la informacion de todos los sistemas que ese modulo satelital esta cubriendo.
@@ -23,17 +23,9 @@ const procesarAdaptarDatosMensajeSat = async (datosMensajesDeModem, modemTipo) =
         arrayMensajesPorModem = [mensaje];
     }
 
-    console.log("Funcion: ArmarArregloPorTramaSat");
-    console.log("-----------------------------------------");
-    console.log(arrayMensajesPorModem);
     let datosConfig;
     try {
         datosConfig = await dao.getConfigDispositivos();
-        console.log("");
-        console.log("Funcion: getConfigDispositivos");
-        console.log("----------------------------------");
-        console.log(datosConfig);
-        //return datosConfig;
     } catch (error) {
         throw new Error("Error: Error en la consulta a la base de datos de Google");
     }
@@ -51,10 +43,6 @@ const procesarAdaptarDatosMensajeSat = async (datosMensajesDeModem, modemTipo) =
     } catch (error) {
         throw new Error("Error: Error en el armado del Arreglo de Datos por Canal de Thingspeak");
     }
-};
-
-const procesarAdaptarDatosMensajeGsm = async (datosCompletos) => {
-    //TO DO
 };
 
 const ArmarArregloPorTramaSat = (messages) => {
@@ -80,31 +68,20 @@ const ArmarArregloPorTramaSat = (messages) => {
 
 const ArmarArregloMensajesPorSistema = (arrayMensajesPorModem, datosConfig) => {
     //Dato de entrada: arrayMensajesPorModem:
-    //{ deviceID: '0-99990', length: '9', payload: 'C0560D72DA4AB2445A' }
-    //{ deviceID: '0-99991', length: '9', payload: 'A14AA1DBDB818F9759' }
-    //{ deviceID: '0-99991', length: '9', payload: 'A14AA1DBDB818F9759' }
+    //[
+    //  { deviceID: '0-99990', length: '9', payload: 'C0560D72DA4AB2445A' }
+    //  { deviceID: '0-99991', length: '9', payload: 'A14AA1DBDB818F9759' }
+    //  { deviceID: '0-99991', length: '9', payload: 'A14AA1DBDB818F9759' }
+    //]
     try {
-        console.log("AAAAAAAAA");
-        console.log(arrayMensajesPorModem);
-        console.log("");
-        console.log("Funcion: ArmarArregloMensajesPorSistema");
-        console.log("------------------------------------------------");
         let arrayTodosMensajesPorSistema = [];
         for (const mensajePorModem of arrayMensajesPorModem) {
-            //console.log(mensajePorModem);
-            //console.log(`--- ${mensajePorModem.deviceID} ---`);
             const datosConfigDevice = datosConfig[mensajePorModem.deviceID];
-            //console.log(datosConfigDevice);
-            //console.log("");
             const arrayMensajesPorSistema = convertirMensajePorModemEnSistemas(mensajePorModem, datosConfigDevice);
             for (const mensajesPorSistema of arrayMensajesPorSistema) {
                 arrayTodosMensajesPorSistema.push(mensajesPorSistema);
             }
         }
-        console.log("");
-        console.log("Mostrar todos los mensajes por Sistemas");
-        console.log("------------------------------------------------");
-        console.log(arrayTodosMensajesPorSistema);
         return arrayTodosMensajesPorSistema;
     } catch (error) {
         throw error;
@@ -115,14 +92,7 @@ const convertirMensajePorModemEnSistemas = (mensajePorModem, datosConfigDevice) 
     //Dato de entrada: mensajePorModem:
     //{ deviceID: '0-99990', length: '9', payload: 'C0560D72DA4AB2445A' }
     try {
-        console.log("");
-        console.log("Funcion: convertirMensajePorModemEnSistemas");
-        console.log("------------------------------------------------");
-        console.log(mensajePorModem);
-        console.log("");
-
         //Convertir el payload a string de Bits
-        //---------------------------------------
         let mensajesPorSistema = [];
         let indexPayload = 0;
         mensajePorModem.payload = convertirHexaABits(mensajePorModem.payload);
@@ -141,8 +111,6 @@ const convertirMensajePorModemEnSistemas = (mensajePorModem, datosConfigDevice) 
             };
             indexPayload += cantBitsDatos;
             mensajesPorSistema.push(mensajePorSistema);
-            console.log(mensajePorSistema);
-            console.log("");
         }
         return mensajesPorSistema;
     } catch (error) {
@@ -198,8 +166,6 @@ const ArmarArregloDatosPorCanalThingspeak = (arrayMensajePorSistema, datosConfig
                 arrayMensajesThingspeak.push(mensajeThingspeak);
             }
         }
-        console.log("------------------------");
-        console.log(arrayMensajesThingspeak);
         return arrayMensajesThingspeak;
     } catch (error) {
         throw error;
@@ -234,4 +200,4 @@ const convertirBitsANumero = (binaryString, startIndexFromEnd, length) => {
     }
 };
 
-module.exports = { procesarAdaptarDatosMensajeSat };
+module.exports = { procesarAdaptarDatosMensaje };

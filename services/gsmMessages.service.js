@@ -1,3 +1,5 @@
+const { formatDate } = require("../helpers/formato.helper");
+
 let nro_mensaje = 0;
 
 const verificarMensajeGsm = (mensaje) => {
@@ -18,7 +20,7 @@ const verificarMensajeGsm = (mensaje) => {
 const visualizarDatoMensajeGsm = (mensaje) => {
     nro_mensaje++;
     console.log("");
-    console.log(`Mensaje ${nro_mensaje} recibido:`);
+    console.log(`Mensaje ${nro_mensaje} recibido el ${formatDate(new Date())}:`);
     console.log(mensaje);
 };
 
