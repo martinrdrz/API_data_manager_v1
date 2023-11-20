@@ -2,7 +2,7 @@
 const dao = require("../dao/dao");
 const DATOS_POR_CANAL_THINGSPEAK = 8;
 
-const procesarAdaptarDatosMensajeSat = async (datosCompletos) => {
+const procesarAdaptarDatosMensajeSat = async (datosMensajesDeModem, modemTipo) => {
     //TO DO
     //Funcion: ArmarArregloPorTrama
     //Arma una estructura Array_A con un objeto json por cada mensaje que viene en el mensaje transmitido por la estacion terrestre. Recordar que por cada mensaje transmitido por la estacion terrestre puede haber varios mensajes de distintos modulos satelitales dentro. Cada objeto json es este caso, mantiene la informacion de cada modulo satelital, lo que cada trama contiene es la informacion de todos los sistemas que ese modulo satelital esta cubriendo.
@@ -11,10 +11,16 @@ const procesarAdaptarDatosMensajeSat = async (datosCompletos) => {
     //ArmarArregloDatosPorCanalThingspeak
     //Luego, a partir de la estructura Array_B, generar una nueva estructura donde cada objeto json contiene la informacion de la Api_Key y sus datos del 1 al 8, que se deben guardar en Thingspeak por medio de una sola operacion de escritura.
     let arrayMensajesPorModem;
-    try {
-        arrayMensajesPorModem = ArmarArregloPorTramaSat(datosCompletos.messages);
-    } catch (error) {
-        throw new Error("Error: Error en el armado del arreglo de Tramas por mensaje satelital");
+    if (modemTipo == "SAT") {
+        try {
+            arrayMensajesPorModem = ArmarArregloPorTramaSat(datosMensajesDeModem.messages);
+        } catch (error) {
+            throw new Error("Error: Error en el armado del arreglo de Tramas por mensaje satelital");
+        }
+    } else {
+        //al ser un dato de un modem GSM, viene siempre un solo dato/mensaje en el arreglo.
+        const mensaje = { deviceID: datosMensajesDeModem.id, payload: datosMensajesDeModem.payload.slice(2) };
+        arrayMensajesPorModem = [mensaje];
     }
 
     console.log("Funcion: ArmarArregloPorTramaSat");
@@ -47,6 +53,10 @@ const procesarAdaptarDatosMensajeSat = async (datosCompletos) => {
     }
 };
 
+const procesarAdaptarDatosMensajeGsm = async (datosCompletos) => {
+    //TO DO
+};
+
 const ArmarArregloPorTramaSat = (messages) => {
     try {
         let arrayResult = [];
@@ -56,7 +66,7 @@ const ArmarArregloPorTramaSat = (messages) => {
                 if (item.name == "esn") {
                     objResult.deviceID = item.content;
                 } else if (item.name == "payload") {
-                    objResult.length = item.attributes.length; //por el momento no es necesario este campo
+                    //objResult.length = item.attributes.length; //por el momento no es necesario este campo
                     objResult.payload = item.content.slice(2);
                 }
             });
@@ -74,6 +84,8 @@ const ArmarArregloMensajesPorSistema = (arrayMensajesPorModem, datosConfig) => {
     //{ deviceID: '0-99991', length: '9', payload: 'A14AA1DBDB818F9759' }
     //{ deviceID: '0-99991', length: '9', payload: 'A14AA1DBDB818F9759' }
     try {
+        console.log("AAAAAAAAA");
+        console.log(arrayMensajesPorModem);
         console.log("");
         console.log("Funcion: ArmarArregloMensajesPorSistema");
         console.log("------------------------------------------------");

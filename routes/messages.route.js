@@ -8,7 +8,6 @@ const router = Router();
 
 //no se pude cambiar esta ruta porque ya estadada de alta en Globalstart
 router.post("/message", controller.satMessage);
-router.post("/gsmmessage", controller.gsmMessage);
-router.get("/ggsmmessage", controller.ggsmMessage);
+router.get("/gsmmessage", controller.gsmMessage);
 
 module.exports = router;

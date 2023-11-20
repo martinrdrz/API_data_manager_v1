@@ -14,7 +14,7 @@ const satMessage = async (req = request, res = response) => {
     try {
         service.visualizarDatoMensajeSat(resultMensajesOriginales);
         //verificar si se recibe un mensaje vacio, en tal caso no hay que procesarlo
-        let mensajesFormateados = await service.procesarAdaptarDatosMensajeSat(resultMensajesOriginales);
+        let mensajesFormateados = await service.procesarAdaptarDatosMensajeSat(resultMensajesOriginales, "SAT");
         let resultMensajesAlmacenados = await service.almacenarDatos(mensajesFormateados);
         console.log("-----------------");
         console.log(resultMensajesAlmacenados);
@@ -23,29 +23,16 @@ const satMessage = async (req = request, res = response) => {
     }
 };
 
-const gsmMessage = (req = request, res = response) => {
-    try {
-        if (req.is("json")) {
-            let mensaje = req.body;
-            service.verificarMensajeGsm(mensaje);
-            service.visualizarDatoMensajeGsm(mensaje);
-            res.status(200).json(dto.ok("data OK."));
-        } else {
-            console.log("Error de formato");
-            res.status(400).json(dto.error("Error de formato"));
-        }
-    } catch (error) {
-        console.log("");
-        console.log("Error formato mensaje");
-        return res.status(400).json(dto.error(error.message));
-    }
-};
-
-const ggsmMessage = (req = request, res = response) => {
+const gsmMessage = async (req = request, res = response) => {
     let mensaje = req.query;
     try {
         service.verificarMensajeGsm(mensaje);
         service.visualizarDatoMensajeGsm(mensaje);
+        //const arrayMensajeOriginal = [mensaje];
+        let mensajesFormateados = await service.procesarAdaptarDatosMensajeSat(mensaje, "GSM");
+        let resultMensajesAlmacenados = await service.almacenarDatos(mensajesFormateados);
+        console.log("-----------------");
+        console.log(resultMensajesAlmacenados);
         res.status(200).send("OK");
     } catch (error) {
         console.log("");
@@ -54,4 +41,4 @@ const ggsmMessage = (req = request, res = response) => {
     }
 };
 
-module.exports = { satMessage, gsmMessage, ggsmMessage };
+module.exports = { satMessage, gsmMessage };
