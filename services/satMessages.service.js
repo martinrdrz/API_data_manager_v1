@@ -20,7 +20,6 @@ const visualizarDatoMensajeSat = (mensaje) => {
             console.log(`${element.name} : ${element.content}`);
         }
     });
-    console.log("");
 };
 
 const procesarMensajeXML = (messageXML) => {

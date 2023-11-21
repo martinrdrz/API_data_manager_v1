@@ -19,7 +19,6 @@ const verificarMensajeGsm = (mensaje) => {
 
 const visualizarDatoMensajeGsm = (mensaje) => {
     nro_mensaje++;
-    console.log("");
     console.log(`Mensaje ${nro_mensaje} recibido el ${formatDate(new Date())}:`);
     console.log(mensaje);
 };
