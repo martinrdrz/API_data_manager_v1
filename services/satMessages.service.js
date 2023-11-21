@@ -1,4 +1,3 @@
-const xml2js = require("xml2js");
 const parser = require("xml-parser");
 const { formatDate } = require("../helpers/formato.helper");
 
