@@ -41,6 +41,7 @@ const gsmMessage = async (req = request, res = response) => {
         console.log("Error: Error al procesar mensaje GSM");
         return res.status(400).send("ERROR");
     }
+    console.log("");
 };
 
 module.exports = { satMessage, gsmMessage };
