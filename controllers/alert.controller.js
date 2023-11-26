@@ -2,8 +2,8 @@ const service = require("../services/alert.service");
 
 //datos de entrada: usuario# + sistema# + dato# + estado
 const alert = (req, res) => {
-    let mensaje = req.body;
     try {
+        let mensaje = req.body;
         service.verificarDatos(mensaje);
         service.visualizarDatos(mensaje);
     } catch (error) {
