@@ -1,6 +1,25 @@
 const { formatDate } = require("../helpers/formato.helper");
+const dao = require("../dao/dao");
 
 let nro_mensaje = 0;
+
+//dato de entrada: mensaje = {
+//    "usuario": "usuario_1",
+//    "sistema": "sistema_1",
+//    "dato": "dato_1",
+//    "estado": 0
+//}
+const actualizarAlert = async (mensaje) => {
+    //"usuarios/martinrdrz@hotmailcom/sistema_1/dato_1"
+    mensaje.usuario = mensaje.usuario.replace(/\./g, "");
+    const nodo = `usuarios/${mensaje.usuario}/${mensaje.sistema}/${mensaje.dato}`;
+    const dato = { estado_alerta: mensaje.estado };
+    try {
+        await dao.updateAlert(nodo, dato);
+    } catch (error) {
+        throw error;
+    }
+};
 
 //Datos de entrada: {usuario: "usuario_1", sistema: "sistema_1", dato: "dato_1", estado: 0}
 const verificarDatos = (mensaje) => {
@@ -29,4 +48,4 @@ const visualizarDatos = (mensaje) => {
     console.log(mensaje);
 };
 
-module.exports = { verificarDatos, visualizarDatos };
+module.exports = { verificarDatos, visualizarDatos, actualizarAlert };

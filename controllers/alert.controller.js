@@ -5,6 +5,7 @@ const alert = (req, res) => {
     try {
         let mensaje = req.body;
         service.verificarDatos(mensaje);
+        service.actualizarAlert(mensaje);
         service.visualizarDatos(mensaje);
     } catch (error) {
         console.log("Error: Error al procesar mensaje de Alerta");
