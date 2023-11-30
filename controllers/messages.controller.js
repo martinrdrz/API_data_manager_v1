@@ -22,9 +22,11 @@ const satMessage = async (req = request, res = response) => {
             console.log(" ");
         } else {
             console.log("Mensajes satelitales vacios.");
+            console.log(" ");
         }
     } catch (error) {
         console.log(error.message);
+        console.log(" ");
     }
 };
 

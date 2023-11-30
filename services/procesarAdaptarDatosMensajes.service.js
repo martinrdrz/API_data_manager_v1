@@ -76,6 +76,7 @@ const ArmarArregloMensajesPorSistema = (arrayMensajesPorModem, datosConfig) => {
     try {
         let arrayTodosMensajesPorSistema = [];
         for (const mensajePorModem of arrayMensajesPorModem) {
+            //una mejora a realizar podria ser de verificar con un try/catch la siguiente consulta a los datos de la configuracion, porque se puede darel caso de que el deviceID no figureen dicha estructura, y si es asi, en la situacion actual se produciria una excepcion que cortaria el analisis de los mensajes, y enel caso de que se traten de mensajes satelitales con varios mensajes (que por ahi es raro el caso), el resto de los mensajes no seria procesados.
             const datosConfigDevice = datosConfig[mensajePorModem.deviceID];
             const arrayMensajesPorSistema = convertirMensajePorModemEnSistemas(mensajePorModem, datosConfigDevice);
             for (const mensajesPorSistema of arrayMensajesPorSistema) {
