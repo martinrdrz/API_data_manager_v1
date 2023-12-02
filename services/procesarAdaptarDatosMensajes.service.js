@@ -193,8 +193,14 @@ const convertirBitsANumero = (binaryString, startIndexFromEnd, length) => {
         const startIndex = binaryString.length - (startIndexFromEnd - 1) - length;
         // Extrae la subcadena basada en el índice de inicio y la longitud dada
         const subString = binaryString.slice(startIndex, startIndex + length);
-        // Convierte la subcadena binaria a un número entero
-        const intValue = parseInt(subString, 2);
+        let intValue;
+        if (subString[0] === "1") {
+            // Convertir de complemento a dos a decimal negativo
+            intValue = -1 * ((parseInt(subString.slice(1), 2) ^ ((1 << (length - 1)) - 1)) + 1);
+        } else {
+            // Convertir directamente a decimal
+            intValue = parseInt(subString, 2);
+        }
         return intValue;
     } catch (error) {
         throw error;
